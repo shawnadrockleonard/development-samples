@@ -7,7 +7,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.Configuration;
 
-namespace IaC.Powershell.Sample01
+namespace InfrastructureAsCode.Powershell.Sample01
 {
     /// <summary>
     /// Encapsulates all the information from SharePoint.

@@ -12,11 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InfoPath", "InfoPath\InfoPath.shproj", "{4A3A4796-D9E3-407E-A811-9FBCBE532C61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample01", "Sample01\Sample01.csproj", "{50797124-7590-4D91-8331-39D55F1F90A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureAsCode.Powershell.Sample01", "Sample01\InfrastructureAsCode.Powershell.Sample01.csproj", "{50797124-7590-4D91-8331-39D55F1F90A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IaC.Core", "..\Microsoft.IaC\Microsoft.IaC.Core\IaC.Core.csproj", "{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureAsCode.Core", "..\Infrastructure-As-Code\InfrastructureAsCode.Core\InfrastructureAsCode.Core.csproj", "{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IaC.Powershell", "..\Microsoft.IaC\Microsoft.IaC.Powershell\IaC.Powershell.csproj", "{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureAsCode.Powershell", "..\Infrastructure-As-Code\InfrastructureAsCode.Powershell\InfrastructureAsCode.Powershell.csproj", "{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{DBFE8970-F807-4325-A471-5F3DE07EFD43}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -42,5 +44,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F} = {DBFE8970-F807-4325-A471-5F3DE07EFD43}
+		{20C0FF0D-DEA3-45F8-BC4C-8896C3926265} = {DBFE8970-F807-4325-A471-5F3DE07EFD43}
 	EndGlobalSection
 EndGlobal

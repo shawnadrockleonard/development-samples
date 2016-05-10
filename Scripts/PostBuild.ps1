@@ -31,6 +31,7 @@ process
 		Copy-Item "$TargetDir\ModuleFiles\*.psd1" -Destination  "$PSModuleHome"
 		Copy-Item "$TargetDir\ModuleFiles\*.ps1xml" -Destination "$PSModuleHome"
 		Copy-Item "$TargetDir\ModuleFiles\*.resx" -Destination "$PSModuleHome"
+		Copy-Item "$TargetDir\*.ps1" -Destination "$PSModuleHome"
 	} 
 	elseif ($ConfigurationName -like "Release*")
 	{

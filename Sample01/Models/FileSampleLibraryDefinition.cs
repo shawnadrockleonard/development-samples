@@ -1,4 +1,4 @@
-﻿using IaC.Core.Models;
+﻿using InfrastructureAsCode.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SharePoint.Client;
 
-namespace IaC.Powershell.Sample01.Models
+namespace InfrastructureAsCode.Powershell.Sample01.Models
 {
     /// <summary>
     /// Defines the JSON file which will provision resources

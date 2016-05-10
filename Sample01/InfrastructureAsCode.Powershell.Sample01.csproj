@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IaC.Powershell.Sample01</RootNamespace>
-    <AssemblyName>Microsoft.IaC.Powershell.Sample01</AssemblyName>
+    <AssemblyName>InfrastructureAsCode.Powershell.Sample01</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -135,8 +135,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel" />
@@ -146,8 +146,8 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -167,11 +167,11 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="AppFiles\Content\Provisioner.json" />
-    <None Include="ModuleFiles\Microsoft.IaC.Powershell.Sample01.Format.ps1xml">
+    <None Include="ModuleFiles\InfrastructureAsCode.Powershell.Sample01.Format.ps1xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ModuleFiles\Microsoft.IaC.Powershell.Sample01.psd1">
+    <None Include="ModuleFiles\InfrastructureAsCode.Powershell.Sample01.psd1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -192,13 +192,13 @@
     <Content Include="AppFiles\SiteAssets\css\Sample01.css" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Microsoft.IaC\Microsoft.IaC.Core\IaC.Core.csproj">
+    <ProjectReference Include="..\..\Infrastructure-As-Code\InfrastructureAsCode.Core\InfrastructureAsCode.Core.csproj">
       <Project>{ea0d6cf4-74a7-4e3c-9bcd-f25b60c7716f}</Project>
-      <Name>IaC.Core</Name>
+      <Name>InfrastructureAsCode.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Microsoft.IaC\Microsoft.IaC.Powershell\IaC.Powershell.csproj">
+    <ProjectReference Include="..\..\Infrastructure-As-Code\InfrastructureAsCode.Powershell\InfrastructureAsCode.Powershell.csproj">
       <Project>{20c0ff0d-dea3-45f8-bc4c-8896c3926265}</Project>
-      <Name>IaC.Powershell</Name>
+      <Name>InfrastructureAsCode.Powershell</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

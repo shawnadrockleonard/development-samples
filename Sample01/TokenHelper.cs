@@ -24,7 +24,7 @@ using AudienceUriValidationFailedException = Microsoft.IdentityModel.Tokens.Audi
 using SecurityTokenHandlerConfiguration = Microsoft.IdentityModel.Tokens.SecurityTokenHandlerConfiguration;
 using X509SigningCredentials = Microsoft.IdentityModel.SecurityTokenService.X509SigningCredentials;
 
-namespace IaC.Powershell.Sample01
+namespace InfrastructureAsCode.Powershell.Sample01
 {
     public static class TokenHelper
     {
