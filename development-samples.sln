@@ -6,10 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25160B45-3F11-460E-9804-E703B3947FF9}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
+		Scripts\PostBuild.ps1 = Scripts\PostBuild.ps1
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InfoPath", "InfoPath\InfoPath.shproj", "{4A3A4796-D9E3-407E-A811-9FBCBE532C61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample01", "Sample01\Sample01.csproj", "{50797124-7590-4D91-8331-39D55F1F90A5}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -18,6 +21,12 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50797124-7590-4D91-8331-39D55F1F90A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50797124-7590-4D91-8331-39D55F1F90A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50797124-7590-4D91-8331-39D55F1F90A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50797124-7590-4D91-8331-39D55F1F90A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
