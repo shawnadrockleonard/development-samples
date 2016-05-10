@@ -16,7 +16,7 @@ We will use the succeeding posts to project the form to a full application.
     The sample InfoPath form
 </div>
 <figure>
-    <img src="imgs/infopath-sample1.png" width="500" />
+    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-sample1.PNG" width="500" />
     <figcaption>The intent of this form was to collect some metadata long with attachments.  Word documents, Powerpoints, and other files.  The aggregate of this metadata nd the files would be submitted for approval in some specific workflow.</figcaption>
 </figure>
 
