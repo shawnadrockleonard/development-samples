@@ -28,7 +28,7 @@ The intent of this form was to collect some metadata long with attachments.  Wor
     InfoPath is based completely on a XML with a well defined schema.  The IDE is super easy to use and allows you to rapidly create fields and mappings.
 </div>
 <figure>
-    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-schema.png" width="500" />
+    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-schema.PNG" width="500" />
     <figcaption>The XSD markup drives the strict XML output</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ The intent of this form was to collect some metadata long with attachments.  Wor
     The output of the form is raw XML with various namespaces that InfoPath and SharePoint use to render and process the XML.
 </div>
 <figure>
-    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexml.png" width="500" />
+    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexml.PNG" width="500" />
 <figcaption>Note the core XML structure appears as the XSD has defined it.</figcaption>
 </figure>
 
@@ -49,6 +49,6 @@ The intent of this form was to collect some metadata long with attachments.  Wor
 InfoPath leverage XSL to transform the XML in a human readable format.  XSL is the backbone of many SharePoint Add-Ins so it made since to leverage this core technology.  The neat part of InfoPath was the ability to leverage this XSL to render in Form Services as well as in external systems if a craft developer could crack open the manifest.
 </div>
 <figure>
-        <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexsl.png" width="500" />
+        <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexsl.PNG" width="500" />
     <figcaption>The XSL transforms the XML into a specific view in the InfoPath form</figcaption>
 </figure>
