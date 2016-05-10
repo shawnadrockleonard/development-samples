@@ -1,25 +1,6 @@
 ﻿# development-samples
 InfoPath Example and Description
 
-### Disclaimer ###
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
-Microsoft provides programming examples for illustration only, without 
-warranty either expressed or implied, including, but not limited to, the
-implied warranties of merchantability and/or fitness for a particular 
-purpose.  
-
-This sample assumes that you are familiar with the programming language
-being demonstrated and the tools used to create and debug procedures. 
-Microsoft support professionals can help explain the functionality of a
-particular procedure, but they will not modify these examples to provide
-added functionality or construct procedures to meet your specific needs. 
-If you have limited programming experience, you may want to contact a 
-Microsoft Certified Partner or the Microsoft fee-based consulting line 
-at (800) 936-5200. 
-
-It is your responsiblity to review the code and understand what is being performed.
-
 
 ### Summary ###
 Please note: We will use the succeeding posts to project the form into a full application.  I will provide brief screenshots to detail the form and its purpose.
@@ -38,7 +19,7 @@ Please note: We will use the succeeding posts to project the form into a full ap
     The intent of this form was to collect some metadata long with attachments.  Word documents, Powerpoints, and other files.  The aggregate of this metadata nd the files would be submitted for approval in some specific workflow.
 </div>
 <figure>
-    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-sample1.PNG" width="500" />
+    <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-sample1.PNG" width="500" />
     <br />
     <figcaption>The sample InfoPath form</figcaption>
 </figure>
@@ -49,7 +30,7 @@ Please note: We will use the succeeding posts to project the form into a full ap
     InfoPath is based completely on a XML with a well defined schema.  The IDE is super easy to use and allows you to rapidly create fields and mappings.
 </div>
 <figure>
-    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-schema.PNG" width="500" />
+    <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-schema.PNG" width="500" />
     <br />
     <figcaption>The XSD markup drives the strict XML output</figcaption>
 </figure>
@@ -61,7 +42,7 @@ Please note: We will use the succeeding posts to project the form into a full ap
     The output of the form is raw XML with various namespaces that InfoPath and SharePoint use to render and process the XML.
 </div>
 <figure>
-    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexml.PNG" width="500" />
+    <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-samplexml.PNG" width="500" />
     <br />
     <figcaption>Note the core XML structure appears as the XSD has defined it.</figcaption>
 </figure>
@@ -72,7 +53,27 @@ Please note: We will use the succeeding posts to project the form into a full ap
     InfoPath leverage XSL to transform the XML in a human readable format.  XSL is the backbone of many SharePoint Add-Ins so it made since to leverage this core technology.  The neat part of InfoPath was the ability to leverage this XSL to render in Form Services as well as in external systems if a craft developer could crack open the manifest.
 </div>
 <figure>
-    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexsl.PNG" width="500" />
+    <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-samplexsl.PNG" width="500" />
     <br />
     <figcaption>The XSL transforms the XML into a specific view in the InfoPath form</figcaption>
 </figure>
+
+
+### Disclaimer ###
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+Microsoft provides programming examples for illustration only, without 
+warranty either expressed or implied, including, but not limited to, the
+implied warranties of merchantability and/or fitness for a particular 
+purpose.  
+
+This sample assumes that you are familiar with the programming language
+being demonstrated and the tools used to create and debug procedures. 
+Microsoft support professionals can help explain the functionality of a
+particular procedure, but they will not modify these examples to provide
+added functionality or construct procedures to meet your specific needs. 
+If you have limited programming experience, you may want to contact a 
+Microsoft Certified Partner or the Microsoft fee-based consulting line 
+at (800) 936-5200. 
+
+It is your responsiblity to review the code and understand what is being performed.

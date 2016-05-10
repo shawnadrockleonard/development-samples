@@ -1,6 +1,14 @@
 ﻿# development-samples
 Light Customizations
 
+### Summary ###
+Please note: I will provide brief screenshots to detail the form and its purpose.
+
+#Debug and run locally
+To debug the following project you will need to follow the guidance (https://github.com/pinch-perfect/Infrastructure-As-Code/blob/master/README.md) and ensure you have the Infrastructure-As-Code repository locally.
+
+
+
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
@@ -19,7 +27,3 @@ Microsoft Certified Partner or the Microsoft fee-based consulting line
 at (800) 936-5200. 
 
 It is your responsiblity to review the code and understand what is being performed.
-
-
-### Summary ###
-Please note: I will provide brief screenshots to detail the form and its purpose.
