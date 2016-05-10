@@ -15,10 +15,11 @@ We will use the succeeding posts to project the form into a full application.
 <br />
 
 <div>
-The intent of this form was to collect some metadata long with attachments.  Word documents, Powerpoints, and other files.  The aggregate of this metadata nd the files would be submitted for approval in some specific workflow.
+    The intent of this form was to collect some metadata long with attachments.  Word documents, Powerpoints, and other files.  The aggregate of this metadata nd the files would be submitted for approval in some specific workflow.
 </div>
 <figure>
     <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-sample1.PNG" width="500" />
+    <br />
     <figcaption>The sample InfoPath form</figcaption>
 </figure>
 
@@ -29,6 +30,7 @@ The intent of this form was to collect some metadata long with attachments.  Wor
 </div>
 <figure>
     <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-schema.PNG" width="500" />
+    <br />
     <figcaption>The XSD markup drives the strict XML output</figcaption>
 </figure>
 
@@ -40,15 +42,17 @@ The intent of this form was to collect some metadata long with attachments.  Wor
 </div>
 <figure>
     <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexml.PNG" width="500" />
-<figcaption>Note the core XML structure appears as the XSD has defined it.</figcaption>
+    <br />
+    <figcaption>Note the core XML structure appears as the XSD has defined it.</figcaption>
 </figure>
 
 
 <br />
 <div>
-InfoPath leverage XSL to transform the XML in a human readable format.  XSL is the backbone of many SharePoint Add-Ins so it made since to leverage this core technology.  The neat part of InfoPath was the ability to leverage this XSL to render in Form Services as well as in external systems if a craft developer could crack open the manifest.
+    InfoPath leverage XSL to transform the XML in a human readable format.  XSL is the backbone of many SharePoint Add-Ins so it made since to leverage this core technology.  The neat part of InfoPath was the ability to leverage this XSL to render in Form Services as well as in external systems if a craft developer could crack open the manifest.
 </div>
 <figure>
-        <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexsl.PNG" width="500" />
+    <img src="https://github.com/pinch-perfect/development-samples/blob/master/InfoPath/imgs/infopath-samplexsl.PNG" width="500" />
+    <br />
     <figcaption>The XSL transforms the XML into a specific view in the InfoPath form</figcaption>
 </figure>
