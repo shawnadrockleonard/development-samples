@@ -50,12 +50,6 @@
       <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.IaC.Core">
-      <HintPath>..\..\Microsoft.IaC\Microsoft.IaC.Powershell\bin\Debug\Microsoft.IaC.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IaC.Powershell">
-      <HintPath>..\..\Microsoft.IaC\Microsoft.IaC.Powershell\bin\Debug\Microsoft.IaC.Powershell.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -172,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="AppFiles\Content\Provisioner.json" />
     <None Include="ModuleFiles\Microsoft.IaC.Powershell.Sample01.Format.ps1xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -189,9 +184,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
-    <Folder Include="SiteAssets\css\" />
-    <Folder Include="SiteAssets\js\" />
+    <Folder Include="AppFiles\SiteAssets\js\" />
+    <Folder Include="AppFiles\SiteAssets\xsl\" />
+    <Folder Include="imgs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppFiles\SiteAssets\css\Sample01.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Microsoft.IaC\Microsoft.IaC.Core\IaC.Core.csproj">
+      <Project>{ea0d6cf4-74a7-4e3c-9bcd-f25b60c7716f}</Project>
+      <Name>IaC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Microsoft.IaC\Microsoft.IaC.Powershell\IaC.Powershell.csproj">
+      <Project>{20c0ff0d-dea3-45f8-bc4c-8896c3926265}</Project>
+      <Name>IaC.Powershell</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

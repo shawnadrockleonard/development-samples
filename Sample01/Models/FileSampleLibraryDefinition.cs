@@ -16,10 +16,10 @@ namespace IaC.Powershell.Sample01.Models
         public FileSampleLibraryDefinition() : base()
         {
             this.SiteResources = false; // used to provision list specific attributes not at the site level
-            this.Lists.Add(GetSample01Library());
+            this.Lists.Add(GetSampleLibrary());
         }
 
-        private SPListDefinition GetSample01Library()
+        private SPListDefinition GetSampleLibrary()
         {
             var newList = new SPListDefinition()
             {
@@ -28,13 +28,13 @@ namespace IaC.Powershell.Sample01.Models
                 ListTemplate = ListTemplateType.GenericList,
                 QuickLaunch = QuickLaunchOptions.On,
                 Versioning = false,
-                FieldDefinitions = GetSample01Fields()
+                FieldDefinitions = GetSampleFields()
             };
 
             return newList;
         }
 
-        private List<SPFieldDefinitionModel> GetSample01Fields()
+        private List<SPFieldDefinitionModel> GetSampleFields()
         {
             var fields =new  List<SPFieldDefinitionModel>();
 
@@ -44,10 +44,9 @@ namespace IaC.Powershell.Sample01.Models
                DisplayName = "Description",
                Description = "Contains the description of the database",
                FieldGuid = new Guid("81b59091-34e8-426e-abe8-9d8031e232fa"),
-               GroupName = "Sample01",
-               InternalName = "Sample01Description",
+               GroupName = "SampleCSR",
+               InternalName = "SampleCSRDescription",
                NumLines = 10,
-               RestrictedMode = true,
                RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
@@ -55,10 +54,10 @@ namespace IaC.Powershell.Sample01.Models
                 DisplayName = "Description Attachments",
                 Description = "Contains the hyperlinks to the attachments for the database",
                 FieldGuid = new Guid("e48f3553-498d-4eea-bdcb-a065f24baa72"),
-                GroupName = "Sample01",
-                InternalName = "Sample01DescAttachments",
+                GroupName = "SampleCSR",
+                InternalName = "SampleCSRDescAttachments",
                 NumLines = 10,
-                RestrictedMode = true,
+                RestrictedMode = false,
                 RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
@@ -66,10 +65,10 @@ namespace IaC.Powershell.Sample01.Models
                 DisplayName = "Cover Letter Attachments",
                 Description = "Contains the hyperlinks to the cover letter attachments for the database",
                 FieldGuid = new Guid("336df8a0-0014-4e4e-9120-7b5362d7ebc7"),
-                GroupName = "Sample01",
-                InternalName = "Sample01CoverLetterAttachments",
+                GroupName = "SampleCSR",
+                InternalName = "SampleCSRCoverLetterAttachments",
                 NumLines = 10,
-                RestrictedMode = true,
+                RestrictedMode = false,
                 RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
@@ -77,10 +76,10 @@ namespace IaC.Powershell.Sample01.Models
                 DisplayName = "Secondary Attachments",
                 Description = "Contains the hyperlinks to the secondary attachments for the database",
                 FieldGuid = new Guid("ee3e6f0b-fa54-4956-9709-68919671de5a"),
-                GroupName = "Sample01",
-                InternalName = "Sample01SecondaryAttachments",
+                GroupName = "SampleCSR",
+                InternalName = "SampleCSRSecondaryAttachments",
                 NumLines = 10,
-                RestrictedMode = true,
+                RestrictedMode = false,
                 RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.DateTime)
@@ -89,8 +88,8 @@ namespace IaC.Powershell.Sample01.Models
                 DisplayName = "Last Updated",
                 Description = "Contains the date this was last updated",
                 FieldGuid = new Guid("b7e7ca56-d150-4551-91bf-f4c679a018ee"),
-                GroupName = "Sample01",
-                InternalName = "Sample01LastUpdated",
+                GroupName = "SampleCSR",
+                InternalName = "SampleCSRLastUpdated",
                 DateFieldFormat = DateTimeFieldFormatType.DateOnly
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
@@ -98,10 +97,9 @@ namespace IaC.Powershell.Sample01.Models
                 DisplayName = "Comments",
                 Description = "Contains user comments for the database",
                 FieldGuid = new Guid("d7783199-1226-4097-a48c-caa748f95857"),
-                GroupName = "Sample01",
-                InternalName = "Sample01Comments",
+                GroupName = "SampleCSR",
+                InternalName = "SampleCSRComments",
                 NumLines = 10,
-                RestrictedMode = true,
                 RichTextField = true
             });
 

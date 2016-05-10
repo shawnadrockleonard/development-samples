@@ -14,6 +14,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InfoPath", "InfoPath\InfoPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample01", "Sample01\Sample01.csproj", "{50797124-7590-4D91-8331-39D55F1F90A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IaC.Core", "..\Microsoft.IaC\Microsoft.IaC.Core\IaC.Core.csproj", "{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IaC.Powershell", "..\Microsoft.IaC\Microsoft.IaC.Powershell\IaC.Powershell.csproj", "{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		InfoPath\InfoPath.projitems*{4a3a4796-d9e3-407e-a811-9fbcbe532c61}*SharedItemsImports = 13
@@ -27,6 +31,14 @@ Global
 		{50797124-7590-4D91-8331-39D55F1F90A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50797124-7590-4D91-8331-39D55F1F90A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50797124-7590-4D91-8331-39D55F1F90A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C0FF0D-DEA3-45F8-BC4C-8896C3926265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
