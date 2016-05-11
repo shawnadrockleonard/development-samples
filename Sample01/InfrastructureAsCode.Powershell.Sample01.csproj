@@ -186,10 +186,14 @@
   <ItemGroup>
     <Folder Include="AppFiles\SiteAssets\js\" />
     <Folder Include="AppFiles\SiteAssets\xsl\" />
-    <Folder Include="imgs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppFiles\SiteAssets\css\Sample01.css" />
+    <Content Include="imgs\extend-site-provisioner.PNG" />
+    <Content Include="imgs\project-config-powershell-debug.PNG" />
+    <Content Include="imgs\resulting-after-upload-control.png" />
+    <Content Include="imgs\resulting-list-form.png" />
+    <Content Include="imgs\resulting-ootb-upload-control.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure-As-Code\InfrastructureAsCode.Core\InfrastructureAsCode.Core.csproj">
