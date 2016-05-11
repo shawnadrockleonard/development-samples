@@ -1,0 +1,22 @@
+﻿.idAssignedTo { 
+    font-weight:bold;
+}
+
+.tableOutlineArea {
+    border: solid 1px #e22ae2;
+}
+
+.tableAdminArea {
+    background-color: #808080;
+}
+
+tr.tableAdminArea {
+    background-color: #808080;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.over {
+    background: #93AFBC;
+}

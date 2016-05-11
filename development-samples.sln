@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{DB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureAsCode.Powershell.Sample02", "Sample02\InfrastructureAsCode.Powershell.Sample02.csproj", "{5B80D494-A68A-427C-A5FF-8682564D08A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureAsCode.Powershell.Sample03", "Sample03\InfrastructureAsCode.Powershell.Sample03.csproj", "{BA3EAE41-FC05-4827-838F-E2F898771B13}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		InfoPath\InfoPath.projitems*{4a3a4796-d9e3-407e-a811-9fbcbe532c61}*SharedItemsImports = 13
@@ -47,6 +49,10 @@ Global
 		{5B80D494-A68A-427C-A5FF-8682564D08A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B80D494-A68A-427C-A5FF-8682564D08A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B80D494-A68A-427C-A5FF-8682564D08A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
