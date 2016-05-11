@@ -30,7 +30,10 @@ At the root of the project is a sample .ps1 file which will run the same series 
 
 After the Powershell cmdlet Set-IaCProvisionResources has executed successfully you should see a list "Sample 01 File Upload" in your Site.  The following videos will demonstrate how to execute the cmdlets and the user experience with the form.  You can quickly see that the Out of the Box controls are very similiar to InfoPath.  The control in native SharePoint however, do not suffer from a variety of file upload limits and schema drift.
 
+#Video demonstration
+Here is a video to watch how you can go from Build to configuration of a SharePoint site.
 
+<iframe width="608" height="391" src="https://mix.office.com/embed/1hqxzxbj2h51c" frameborder="0" allowfullscreen></iframe>
 
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
