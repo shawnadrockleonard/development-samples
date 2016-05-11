@@ -36,6 +36,12 @@ Here is a video to watch how you can go from Build to configuration of a SharePo
 <img src="imgs/build-and-deploy.png" />
 https://mix.office.com/embed/1hqxzxbj2h51c
 
+#Outcome 
+Here is a video of the configured list in SharePoint
+<img src="imgs/configured-list-usage.png" />
+https://mix.office.com/watch/fy22hj4wxysy
+
+
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
