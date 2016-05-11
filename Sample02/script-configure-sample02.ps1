@@ -16,17 +16,11 @@
 #>  
 [CmdletBinding(HelpURI='http://aka.ms/pinch-perfect')]
 Param(
-    [Parameter(Mandatory = $false)]
+    [Parameter(Mandatory = $true)]
     [String]$RelativeOrFullPath
 )
 BEGIN 
 {
-	# Configured path for my development environment
-	if($RelativeOrFullPath -eq $null -or $RelativeOrFullPath.Length -lt 1) 
-	{   # if we do not supply a parameter use my local path
-		$RelativeOrFullPath = "K:\sleonard\vGIT\development-samples\Sample02\AppFiles"
-	}
-
 	# Configure context to SharePoint site
 	# Connect-SPIaC -Url "https://[tenant].sharepoint.com" -UserName "[user]@[tenant].onmicrosoft.com"
 }

@@ -144,6 +144,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="README.md" />
+    <None Include="script-configure-assets.ps1" />
     <None Include="script-configure-sample02.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
