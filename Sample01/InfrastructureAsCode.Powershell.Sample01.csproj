@@ -189,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppFiles\SiteAssets\css\Sample01.css" />
+    <Content Include="imgs\build-and-deploy.png" />
     <Content Include="imgs\extend-site-provisioner.PNG" />
     <Content Include="imgs\project-config-powershell-debug.PNG" />
     <Content Include="imgs\resulting-after-upload-control.png" />
