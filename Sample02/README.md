@@ -1,5 +1,5 @@
 ﻿# development-samples
-Configuration
+Customization
 
 ### Summary ###
 This sample powershell project will help define a list with a variety of columns.  After building the solution it should deploy the module to your home directory.  Once deployed the module and its cmd-lets will be available for use.  These cmd-lets will configure a SharePoint site based on the JSON file specified.  For this sample we will use a Site Provisioner Model to define our list and its fields.  We will run a cmd-let to generate the JSON file that we will feed into the ETL cmd-let to provision the list and its fields.  By automating this process we ensure that the list and its fields are the same in any SharePoint site where it is run.  We can check the .JSON file into source control to version history the Site definition.
@@ -14,32 +14,23 @@ This sample extends IaC to deploy Sample sharepoint list with specific column ty
 We have created a model to extend the site provisioning model with our specific list and columns details.
 <img src="imgs\extend-site-provisioner.PNG" width="500" />
 
-This project will compile as a Binary Powershell module and deployed to your [Users/Documents/WindowsPowershell/Module/InfrastructureAsCode.Powershell.Sample01] folder.  If you attempt to debug the project and it does not launch Powershell, navigate to the Project Debug tab and specified the external program powershell.exe with a -noexit argument.  
+This project will compile as a Binary Powershell module and deployed to your [Users/Documents/WindowsPowershell/Module/InfrastructureAsCode.Powershell.Sample02] folder.  If you attempt to debug the project and it does not launch Powershell, navigate to the Project Debug tab and specified the external program powershell.exe with a -noexit argument.  
 <img src="imgs\project-config-powershell-debug.PNG" width="500" />
 
 
 You can however just build the project and then open a powershell windows and execute the cmdlets below:
 ```powershell
 Connect-SPIaC –Url https://[tenant].sharepoint.com –UserName "[user]@[tenant].onmicrosoft.com
-$RelativeOrFullPath = "Local Path to folder where files will be written"
-Add-IaCSample01Definition -RelativePath $RelativeOrFullPath -Verbose
+$RelativeOrFullPath = "c:\[YOUR REPO FOLDER]\development-samples\Sample02\AppFiles\"
+Add-IaCSample02Definition -RelativePath $RelativeOrFullPath -Verbose
 Set-IaCProvisionResources -SiteContent $RelativeOrFullPath -Verbose
 Disconnect-SPIaC
 ```
 At the root of the project is a sample .ps1 file which will run the same series of commands.
 
-After the Powershell cmdlet Set-IaCProvisionResources has executed successfully you should see a list "Sample 01 File Upload" in your Site.  The following videos will demonstrate how to execute the cmdlets and the user experience with the form.  You can quickly see that the Out of the Box controls are very similiar to InfoPath.  The control in native SharePoint however, do not suffer from a variety of file upload limits and schema drift.
+After the Powershell cmdlet Set-IaCProvisionResources has executed successfully you should see a list "Sample 02 File Upload" in your Site.  The following videos will demonstrate how to custom a SharePoint form, create a new form, extract the XSL, insert a Content Editor web part, and enhance the usability of the form.  You can quickly see that the Out of the Box controls are very similiar to InfoPath.  The control in native SharePoint however, do not suffer from a variety of file upload limits and schema drift.
 
-#Video demonstration
-Here is a video to watch how you can go from Build to configuration of a SharePoint site.
 
-<img src="imgs/build-and-deploy.png" />
-https://mix.office.com/embed/1hqxzxbj2h51c
-
-#Outcome 
-Here is a video of the configured list in SharePoint
-<img src="imgs/configured-list-usage.png" />
-https://mix.office.com/watch/fy22hj4wxysy
 
 
 ### Disclaimer ###

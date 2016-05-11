@@ -29,9 +29,6 @@ PROCESS
 		Add-IaCSample01Definition -RelativePath $RelativeOrFullPath -Verbose
 
 		Set-IaCProvisionResources -SiteContent $RelativeOrFullPath -Verbose
-
-		Set-IaCProvisionAssets -SiteContent $RelativeOrFullPath -Verbose
-
 	}
 	catch {
 		Write-Error $_.Exception[0]
