@@ -87,7 +87,8 @@ namespace InfrastructureAsCode.Powershell.Sample03.Models
                 FieldGuid = new Guid("b7e7ca56-d150-4551-91bf-f4c679a018ee"),
                 GroupName = "SampleCSR",
                 InternalName = "SampleCSRLastUpdated",
-                DateFieldFormat = DateTimeFieldFormatType.DateOnly
+                DateFieldFormat = DateTimeFieldFormatType.DateOnly,
+                Required = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {

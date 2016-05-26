@@ -1,45 +1,10 @@
 ﻿/// <reference path="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.3.min.js" />
 /// <reference path="//cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices.min.js" />
 /// <reference path="ns.utils.js" />
+/// <reference path="ns.models.js" />
 /// <reference path="ns.sp.js" />
 
 var _returnId = 0;
-
-/*
- * Represents a file upload
- */
-var uploadModel = function (name, size, serverUrl, targetId, errorCode) {
-    var self = this;
-
-    self.name = ko.observable(name);
-    self.size = ko.observable(size);
-    self.serverUrl = ko.observable(serverUrl);
-    self.targetId = ko.observable(targetId);
-    self.errorCode = ko.observable(errorCode);
-
-    self.sizeMB = ko.computed(function () {
-        var retValue = 0;
-        if (self.size() !== undefined || self.size() !== 0) {
-            retValue = self.size() / 1048576; // div by MB std
-        }
-        return retValue;
-    }, this, { deferEvaluation: true });
-
-    self.sizeGB = ko.computed(function () {
-        var retValue = 0;
-        if (self.size() !== undefined || self.size() !== 0) {
-            retValue = self.size() / 1073741824 // div by GB std
-        }
-        return retValue;
-    }, this, { deferEvaluation: true });
-
-    self.hrefTag = ko.computed(function () {
-        var retValue = String.format("{0}#-#{1}#-#{2}", self.serverUrl(), self.name(), self.size());
-        return retValue;
-    }, this, { deferEvaluation: true });
-
-    return self;
-}
 
 
 var upload = function () {
@@ -102,18 +67,18 @@ var vmmodel = new upload();
 ko.applyBindings(vmmodel);
 vmmodel.initializePage();
 
-function setFormFields(formFieldId) {
+function setFormFields(formFieldTitleId, formFieldId) {
     var htmlSelector = ns.utils.cleanJQuerySelector(formFieldId);
     var htmlField = jQuery(htmlSelector);
     var htmlAttachments = htmlField.html();
     var htmlAttachmentsArr = htmlAttachments.split("#--#");
-    if (htmlAttachmentsArr.length > 0) {
+    if (htmlAttachmentsArr.length > 0 && htmlAttachmentsArr[0] != "") {
         vmmodel.uploadViewModel.hasContent(true);
         for (var idx = 0; idx < htmlAttachmentsArr.length; idx++) {
             var attachment = htmlAttachmentsArr[idx];
             var attachmentObject = attachment.split("#-#");
             ns.utils.consoleLog(String.format("URL:{0} Name:{1} Size:{2}", attachmentObject[0], attachmentObject[1], attachmentObject[2]))
-            var model = new uploadModel(attachmentObject[1], attachmentObject[2], attachmentObject[0], formFieldId);
+            var model = new ns.models.uploadModel(attachmentObject[1], attachmentObject[2], attachmentObject[0], formFieldId);
             vmmodel.uploadViewModel.uploads.push(model);
         }
     }
@@ -122,11 +87,7 @@ function setFormFields(formFieldId) {
 $(document).ready(function () {
     ns.utils.consoleLog("Loading modules and js files");
 
-
-    setFormFields("OAPDescriptionAttachments");
-    setFormFields("QMPAttachments");
-    setFormFields("CoverLetterAttachments");
-
-
+    setFormFields("Description Attachments", "SampleCSRDescAttachments");
+    setFormFields("Secondary Attachments", "SampleCSRSecondaryAttachments");
+    setFormFields("Cover Letter Attachments", "SampleCSRCoverLetterAttachments");
 });
-

@@ -93,8 +93,8 @@
             <xsl:attribute name="data-bind">attr: { href: serverUrl, title: name}, text: name</xsl:attribute>
           </a>
         </span> (<span id="fileId">
-          <xsl:attribute name="data-bind">text: size</xsl:attribute>
-        </span>kB)
+          <xsl:attribute name="data-bind">text: sizeMB</xsl:attribute>
+        </span>Mibs)
       </div>
     </script>
     <tr>
@@ -113,29 +113,29 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>OAPDescription</nobr>
+                <nobr>Description</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <xsl:value-of select="@OAPDescription" disable-output-escaping="yes"/>
+              <xsl:value-of select="@SampleCSRDescription" disable-output-escaping="yes"/>
             </td>
           </tr>
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>OAPDescriptionAttachments</nobr>
+                <nobr>Description Attachments</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <div id="OAPDescriptionAttachments" style="display:none">
-                <xsl:value-of select="@OAPDescriptionAttachments"/>
+              <div id="SampleCSRDescAttachments" style="display:none">
+                <xsl:value-of select="@SampleCSRDescAttachments"/>
               </div>
-              <div id="OAPDescriptionAttachmentsListing">
+              <div id="SampleCSRDescAttachmentsListing">
                 <xsl:attribute name="data-bind">with: uploadViewModel</xsl:attribute>
-                <div id="OAPDescriptionAttachmentsId">
+                <div id="SampleCSRDescAttachmentsId">
                   <xsl:attribute name="data-bind">
                     visible:hasContent, template: { name: "uploadedFileTmpl", foreach: ko.utils.arrayFilter(uploads(), function (elementItem) {
-                    return elementItem.targetId() == "OAPDescriptionAttachments";  })}
+                    return elementItem.targetId() == "SampleCSRDescAttachments";  })}
                   </xsl:attribute>
                 </div>
               </div>
@@ -144,19 +144,19 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>QMPAttachments</nobr>
+                <nobr>Secondary Attachments</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <div id="QMPAttachments" style="display:none">
-                <xsl:value-of select="@QMPAttachments"/>
+              <div id="SampleCSRSecondaryAttachments" style="display:none">
+                <xsl:value-of select="@SampleCSRSecondaryAttachments"/>
               </div>
-              <div id="QMPAttachmentsListing">
+              <div id="SampleCSRSecondaryAttachmentsListing">
                 <xsl:attribute name="data-bind">with: uploadViewModel</xsl:attribute>
-                <div id="QMPAttachmentsId">
+                <div id="SampleCSRSecondaryAttachmentsId">
                   <xsl:attribute name="data-bind">
                     visible:hasContent, template: { name: "uploadedFileTmpl", foreach: ko.utils.arrayFilter(uploads(), function (elementItem) {
-                    return elementItem.targetId() == "QMPAttachments";  })}
+                    return elementItem.targetId() == "SampleCSRSecondaryAttachments";  })}
                   </xsl:attribute>
                 </div>
               </div>
@@ -165,19 +165,19 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>CoverLetterAttachments</nobr>
+                <nobr>Cover Letter Attachments</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <div id="CoverLetterAttachments" style="display:none">
-              <xsl:value-of select="@CoverLetterAttachments"/>
+              <div id="SampleCSRCoverLetterAttachments" style="display:none">
+              <xsl:value-of select="@SampleCSRCoverLetterAttachments"/>
               </div>
-              <div id="CoverLetterAttachmentsListing">
+              <div id="SampleCSRCoverLetterAttachmentsListing">
                 <xsl:attribute name="data-bind">with: uploadViewModel</xsl:attribute>
-                <div id="CoverLetterAttachmentsId">
+                <div id="SampleCSRCoverLetterAttachmentsId">
                   <xsl:attribute name="data-bind">
                     visible:hasContent, template: { name: "uploadedFileTmpl", foreach: ko.utils.arrayFilter(uploads(), function (elementItem) {
-                    return elementItem.targetId() == "CoverLetterAttachments";  })}
+                    return elementItem.targetId() == "SampleCSRCoverLetterAttachments";  })}
                   </xsl:attribute>
                 </div>
               </div>
@@ -186,11 +186,11 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>LastUpdate</nobr>
+                <nobr>Last Updated</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <xsl:value-of select="@LastUpdate"/>
+              <xsl:value-of select="@SampleCSRLastUpdated"/>
             </td>
           </tr>
           <tr>
@@ -200,10 +200,10 @@
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <xsl:value-of select="@Comments" disable-output-escaping="yes"/>
+              <xsl:value-of select="@SampleCSRComments" disable-output-escaping="yes"/>
             </td>
           </tr>
-          <tr id="idAttachmentsRow">
+          <tr id="idAttachmentsRow" style="display:none">
             <td nowrap="true" valign="top" class="ms-formlabel" width="20%">
               <SharePoint:FieldLabel ControlMode="Display" FieldName="Attachments" runat="server"/>
             </td>
@@ -211,8 +211,8 @@
               <SharePoint:FormField runat="server" id="AttachmentsField" ControlMode="Display" FieldName="Attachments" __designer:bind="{ddwrt:DataBind('u','AttachmentsField','Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@Attachments')}"/>
               <script>
                 var elm = document.getElementById("idAttachmentsTable");
-                if (elm == null || elm.rows.length == 0)
-                document.getElementById("idAttachmentsRow").style.display='none';
+                if (elm !== null &amp;&amp; elm.rows.length > 0)
+                document.getElementById("idAttachmentsRow").style.display='inline';
               </script>
             </td>
           </tr>

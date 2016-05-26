@@ -1,45 +1,10 @@
 ﻿/// <reference path="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.3.min.js" />
 /// <reference path="//cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices.min.js" />
 /// <reference path="ns.utils.js" />
+/// <reference path="ns.models.js" />
 /// <reference path="ns.sp.js" />
 
 var _returnId = 1;
-
-/*
- * Represents a file upload
- */
-var uploadModel = function (name, size, serverUrl, targetId, errorCode) {
-    var self = this;
-
-    self.name = ko.observable(name);
-    self.size = ko.observable(size);
-    self.serverUrl = ko.observable(serverUrl);
-    self.targetId = ko.observable(targetId);
-    self.errorCode = ko.observable(errorCode);
-
-    self.sizeMB = ko.computed(function () {
-        var retValue = 0;
-        if (self.size() !== undefined || self.size() !== 0) {
-            retValue = self.size() / 1048576; // div by MB std
-        }
-        return retValue;
-    }, this, { deferEvaluation: true });
-
-    self.sizeGB = ko.computed(function () {
-        var retValue = 0;
-        if (self.size() !== undefined || self.size() !== 0) {
-            retValue = self.size() / 1073741824 // div by GB std
-        }
-        return retValue;
-    }, this, { deferEvaluation: true });
-
-    self.hrefTag = ko.computed(function () {
-        var retValue = String.format("{0}#-#{1}#-#{2}", self.serverUrl(), self.name(), self.size());
-        return retValue;
-    }, this, { deferEvaluation: true });
-
-    return self;
-}
 
 
 var upload = function () {
@@ -58,7 +23,7 @@ var upload = function () {
         var userContext = _spPageContextInfo;
         self.userId(userContext.userId);
         self.userDate(ns.utils.setDate());
-        self.webServerUrl(userContext.webServerRelativeUrl);
+        self.webServerUrl(userContext.webAbsoluteUrl);
     };
 
     self.uploadViewModel = {
@@ -199,6 +164,36 @@ var upload = function () {
         return deferred.promise();
     }
 
+    /*
+    Send the request and return the response. This call returns the SharePoint file.
+    */
+    self.addFileToFolder = function (fileNameWithPath, serverRelativeUrlToFolder, arrayBuffer) {
+
+        // Get the file name from the file input control on the page.
+        var serverUrl = self.webServerUrl();
+        var fileName = fileNameWithPath.name;
+
+        // Construct the endpoint.
+        var fileCollectionEndpoint = String.format(
+                "{0}/_api/web/getfolderbyserverrelativeurl('{1}')/files" +
+                "/add(overwrite=true, url='{2}')",
+                serverUrl, serverRelativeUrlToFolder, fileName);
+
+        // Send the request and return the response.
+        // This call returns the SharePoint file.
+        return jQuery.ajax({
+            url: fileCollectionEndpoint,
+            type: "POST",
+            data: arrayBuffer,
+            processData: false,
+            headers: {
+                "accept": "application/json;odata=verbose",
+                "X-RequestDigest": jQuery("#__REQUESTDIGEST").val(),
+                "content-length": arrayBuffer.byteLength
+            }
+        });
+    };
+
     /**
      @method leverage HTML form data for handling multipart uploads
      @param jqueryId {string} element id for jquery to toggle
@@ -210,80 +205,68 @@ var upload = function () {
         if (window.FormData !== undefined) {
             self.uploadViewModel.hasContent(false);
 
-            var dataStack = new FormData();
+            //var dataStack = new FormData();
             var dataIndex = 0;
             var filesUploaded = 0;
             var filesToUpload = self.numberOfFiles();
 
             jQuery(".idUploadBox").toggle();
 
-            var destinationFolder = self.getOrCreateFolder(self.userDate());
+            self.getOrCreateFolder(self.userDate())
+                .done(function (folderUrl) {
 
-            destinationFolder.done(function (folderUrl) {
+                    ns.utils.consoleLog("Folder created..... " + folderUrl);
 
-                ns.utils.consoleLog("Folder created..... " + folderUrl);
+                    for (var i = 0; i < filesToUpload; i++) {
+                        var datafile = files[i];
+                        ns.utils.consoleLog(datafile);
 
-                for (var i = 0; i < filesToUpload; i++) {
-                    var datafile = files[i];
-                    ns.utils.consoleLog(datafile);
+                        self.getFileBuffer(datafile)
+                            .done(function (fileObject, fileBuffer) {
+                                var fileName = fileObject.name;
+                                ns.utils.consoleLog(String.format("Loaded {0} into buffer stack.", fileName));
 
-                    self.getFileBuffer(datafile)
-                    .done(function (fileObject, fileBuffer) {
-                        var fileName = fileObject.name;
-                        ns.utils.consoleLog(String.format("Loaded {0} into buffer stack.", fileName));
+                                try {
+                                    self.addFileToFolder(fileObject, folderUrl, fileBuffer)
+                                        .done(function (file, status, xhr) {
+                                            ns.utils.consoleLog('File uploaded....');
+                                            //self.uploadCallBackSuccess(res);
+                                            var fileModel = new ns.models.uploadModel(file.d.Name, file.d.Length, file.d.ServerRelativeUrl, jqueryTargetId);
+                                            self.uploadViewModel.uploads.push(fileModel);
+                                            self.uploadViewModel.hasContent(true);
+                                            filesUploaded++;
+                                            if (filesToUpload == filesUploaded) {
+                                                self.uploadCallBackSuccess();
+                                                jQuery(".idUploadBox").toggle();
+                                            }
+                                        })
+                                        .fail(function (jqXHR, textStatus, errorThrown) {
+                                            ns.utils.consoleLog('Error uploading document: ' + errorThrown);
+                                            self.isUploading(false);
+                                        });
 
-                        // Construct the endpoint.
-                        var fileCollectionEndpoint = String.format(
-                            "{0}/_api/web/getfolderbyserverrelativeurl('{1}')/files/add(overwrite=true, url='{2}')", self.webServerUrl(), folderUrl, fileName);
-
-                        // Send the request and return the response.
-                        // This call returns the SharePoint file.
-                        jQuery.ajax({
-                            url: fileCollectionEndpoint,
-                            type: "POST",
-                            data: fileBuffer,
-                            processData: false,
-                            headers: {
-                                "accept": "application/json;odata=verbose",
-                                "X-RequestDigest": jQuery("#__REQUESTDIGEST").val()
-                                //,"content-length": fileBuffer.byteLength
-                            },
-                            success: function (file, status, xhr) {
-                                ns.utils.consoleLog('File uploaded....');
-                                //self.uploadCallBackSuccess(res);
-                                var fileModel = new uploadModel(file.d.Name, file.d.Length, file.d.ServerRelativeUrl, jqueryTargetId);
-                                self.uploadViewModel.uploads.push(fileModel);
-                                self.uploadViewModel.hasContent(true);
-                                filesUploaded++;
-                                if (filesToUpload == filesUploaded) {
-                                    self.uploadCallBackSuccess();
-                                    jQuery(".idUploadBox").toggle();
+                                    //dataStack.append("file" + i, datafile);
+                                    dataIndex++;
                                 }
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                ns.utils.consoleLog('Error uploading document: ' + errorThrown);
-                                self.isUploading(false);
-                            }
+                                catch (ex) {
+                                    ns.utils.consoleLog(ex.message);
+                                }
+                            })
+                        .fail(function (sender, args) {
+                            ns.utils.consoleLog(args.get_message());
                         });
-                    })
-                    .fail(function (args) {
-                        ns.utils.consoleLog(args.get_message());
-                    });
 
-                    dataStack.append("file" + i, datafile);
-                    dataIndex++;
-                }
-
-                var btnUploader = $('#koUploader');
-                if (btnUploader && btnUploader.length != 0) {
-                    btnUploader.attr("disabled", "disabled");
-                }
-            })
-            .fail(function (sender, args) {
-
-                ns.utils.consoleLog("Request failed: " + args.get_message());
-            });
-        } else {
+                        var btnUploader = $('#koUploader');
+                        if (btnUploader && btnUploader.length != 0) {
+                            btnUploader.attr("disabled", "disabled");
+                        }
+                    }
+                })
+                .fail(function (sender, args) {
+                    ns.utils.consoleLog("Request failed: " + args.get_message());
+                });
+        }
+        else {
             ns.utils.consoleLog('Unsupported Browser. Try Google Chrome.');
         }
     };
@@ -351,16 +334,16 @@ var vmmodel = new upload();
 ko.applyBindings(vmmodel);
 vmmodel.initializePage();
 
-function setFormFields(formFieldId) {
-    var htmlField = ns.sp.getFormElement(formFieldId, "TextArea");
+function setFormFields(formFieldTitleId, formFieldId) {
+    var htmlField = ns.sp.getFormElement(formFieldTitleId, "TextArea");
     var htmlAttachmentsArr = htmlField.split("#--#");
-    if (htmlAttachmentsArr.length > 0) {
+    if (htmlAttachmentsArr.length > 0 && htmlAttachmentsArr[0] != "") {
         vmmodel.uploadViewModel.hasContent(true);
         for (var idx = 0; idx < htmlAttachmentsArr.length; idx++) {
             var attachment = htmlAttachmentsArr[idx];
             var attachmentObject = attachment.split("#-#");
             ns.utils.consoleLog(String.format("URL:{0} Name:{1} Size:{2}", attachmentObject[0], attachmentObject[1], attachmentObject[2]))
-            var model = new uploadModel(attachmentObject[1], attachmentObject[2], attachmentObject[0], formFieldId);
+            var model = new ns.models.uploadModel(attachmentObject[1], attachmentObject[2], attachmentObject[0], formFieldId);
             vmmodel.uploadViewModel.uploads.push(model);
         }
     }
@@ -382,11 +365,9 @@ $("body").on("click", "#removeDoc", function () {
 $(document).ready(function () {
     ns.utils.consoleLog("Loading modules and js files");
 
-    setFormFields("OAPDescriptionAttachments");
-    setFormFields("QMPAttachments");
-    setFormFields("CoverLetterAttachments");
-
-
+    setFormFields("Description Attachments", "SampleCSRDescAttachments");
+    setFormFields("Secondary Attachments", "SampleCSRSecondaryAttachments");
+    setFormFields("Cover Letter Attachments", "SampleCSRCoverLetterAttachments");
 });
 
 
@@ -405,7 +386,7 @@ function PreSaveAction() {
     }
 
 
-    _tmpReturnValue = ns.sp.setFormValidationError("LastUpdate Required Field", "Date", 9);
+    _tmpReturnValue = ns.sp.setFormValidationError("Last Updated Required Field", "Date", 9);
     if (!_tmpReturnValue) {
         _flag_validation = false;
         _missingFieldsOptions.push("Enter Last updated");
@@ -428,20 +409,20 @@ function PreSaveAction() {
 
         //Display loading message
         if (_returnId === 0) {
-            SP.UI.ModalDialog.showWaitScreenWithNoClose('Creating database entry', 'Almost done...');
+            SP.UI.ModalDialog.showWaitScreenWithNoClose('Creating database entry', 'Almost done...', 350, 600);
         }
         else {
-            SP.UI.ModalDialog.showWaitScreenWithNoClose('Processing...', 'Please wait while we save your form...');
+            SP.UI.ModalDialog.showWaitScreenWithNoClose('Processing...', 'Please wait while we save your form...', 350, 600);
         }
     }
 
     return _flag_validation;
 }
 
-function getUploadedFilesbyField(files, targetId) {
-    var arrOfFiles = [];
-    var filteredFiles = jQuery.grep(files, function (nfile, idx) {
-        return (nfile.targetId().toUpperCase() == targetId);
+function getUploadedFilesbyField(targetId) {
+    var arrOfFiles = [], targetIdClean = targetId.toUpperCase();
+    var filteredFiles = jQuery.grep(vmmodel.uploadViewModel.uploads(), function (nfile, idx) {
+        return (nfile.targetId().toUpperCase() == targetIdClean);
     });
     for (var idx = 0; idx < filteredFiles.length; idx++) {
         arrOfFiles.push(filteredFiles[idx].hrefTag());
@@ -452,14 +433,13 @@ function getUploadedFilesbyField(files, targetId) {
 function copyFieldsForWorkflow() {
 
     try {
-        var files = vmmodel.uploadViewModel.uploads();
-        var OAPDescription = getUploadedFilesbyField(files, "OAPDESCRIPTIONATTACHMENTS");
-        var QMPAttachments = getUploadedFilesbyField(files, "QMPATTACHMENTS");
-        var CoverLetterAttachments = getUploadedFilesbyField(files, "COVERLETTERATTACHMENTS");
+        var SampleCSRDescAttachments = getUploadedFilesbyField("SampleCSRDescAttachments");
+        var SampleCSRSecondaryAttachments = getUploadedFilesbyField("SampleCSRSecondaryAttachments");
+        var SampleCSRCoverLetterAttachments = getUploadedFilesbyField("SampleCSRCoverLetterAttachments");
 
-        ns.sp.setFormFieldValue("OAPDescriptionAttachments", "TextArea", OAPDescription.join("#--#"));
-        ns.sp.setFormFieldValue("QMPAttachments", "TextArea", QMPAttachments.join("#--#"));
-        ns.sp.setFormFieldValue("CoverLetterAttachments", "TextArea", CoverLetterAttachments.join("#--#"));
+        ns.sp.setFormFieldValue("Description Attachments", "TextArea", SampleCSRDescAttachments.join("#--#"));
+        ns.sp.setFormFieldValue("Secondary Attachments", "TextArea", SampleCSRSecondaryAttachments.join("#--#"));
+        ns.sp.setFormFieldValue("Cover Letter Attachments", "TextArea", SampleCSRCoverLetterAttachments.join("#--#"));
         return true;
     }
     catch (e) {

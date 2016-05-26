@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BA3EAE41-FC05-4827-838F-E2F898771B13}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InfrastructureAsCode.Powershell.Sample03</RootNamespace>
     <AssemblyName>InfrastructureAsCode.Powershell.Sample03</AssemblyName>
@@ -28,6 +28,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Client.Policy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -108,29 +111,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\AddIaCSample03Definition.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Models\FileSampleLibraryDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="AppFiles\Content\Provisioner.json" />
     <None Include="AppFiles\SiteAssets\JS\knockout.validation.min.js.map" />
-    <None Include="ModuleFiles\InfrastructureAsCode.Powershell.Sample03.Format.ps1xml">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="ModuleFiles\InfrastructureAsCode.Powershell.Sample03.psd1">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="README.md" />
-    <None Include="script-configure-assets.ps1" />
-    <None Include="script-configure-sample03.ps1">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppFiles\Content\" />
     <Folder Include="imgs\" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +141,7 @@
     <Content Include="AppFiles\SiteAssets\JS\knockout.mapping-latest.js" />
     <Content Include="AppFiles\SiteAssets\JS\knockout.validation.js" />
     <Content Include="AppFiles\SiteAssets\JS\knockout.validation.min.js" />
+    <Content Include="AppFiles\SiteAssets\JS\ns.models.js" />
     <Content Include="AppFiles\SiteAssets\JS\ns.utils.js" />
     <Content Include="AppFiles\SiteAssets\JS\ns.sp.js" />
     <Content Include="AppFiles\SiteAssets\HTML\Sample03Edit.html" />
@@ -163,7 +156,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>C:\windows\system32\windowspowershell\v1.0\powershell.exe -ExecutionPolicy bypass -NoLogo -NonInteractive -Command .'$(SolutionDir)\scripts\PostBuild.ps1' -ProjectDir:'$(ProjectDir)' -ConfigurationName:'$(ConfigurationName)' -TargetDir:'$(TargetDir)' -TargetFileName:'$(TargetFileName)' -TargetName:'$(TargetName)' -SolutionDir:'$(SolutionDir)' -ProjectName:'$(ProjectName)'</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

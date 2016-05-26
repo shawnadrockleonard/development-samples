@@ -130,12 +130,12 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>OAPDescription</nobr>
+                <nobr>Description</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <SharePoint:FormField runat="server" id="ff2{$Pos}" ControlMode="Edit" FieldName="OAPDescription" __designer:bind="{ddwrt:DataBind('u',concat('ff2',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@OAPDescription')}"/>
-              <SharePoint:FieldDescription runat="server" id="ff2description{$Pos}" FieldName="OAPDescription" ControlMode="Edit"/>
+              <SharePoint:FormField runat="server" id="ff2{$Pos}" ControlMode="Edit" FieldName="SampleCSRDescription" __designer:bind="{ddwrt:DataBind('u',concat('ff2',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@SampleCSRDescription')}"/>
+              <SharePoint:FieldDescription runat="server" id="ff2description{$Pos}" FieldName="SampleCSRDescription" ControlMode="Edit"/>
             </td>
           </tr>
 
@@ -165,24 +165,24 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>OAPDescriptionAttachments</nobr>
+                <nobr>Description Attachments</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <div id="oapdescriptionrow" style="display:none">
-              <SharePoint:FormField runat="server" id="ff3{$Pos}" ControlMode="Edit" FieldName="OAPDescriptionAttachments" __designer:bind="{ddwrt:DataBind('u',concat('ff3',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@OAPDescriptionAttachments')}"/>
-              <SharePoint:FieldDescription runat="server" id="ff3description{$Pos}" FieldName="OAPDescriptionAttachments" ControlMode="Edit"/>
+              <div id="SampleCSRDescAttachmentsRow" style="display:none">
+              <SharePoint:FormField runat="server" id="ff3{$Pos}" ControlMode="Edit" FieldName="SampleCSRDescAttachments" __designer:bind="{ddwrt:DataBind('u',concat('ff3',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@SampleCSRDescAttachments')}"/>
+              <SharePoint:FieldDescription runat="server" id="ff3description{$Pos}" FieldName="SampleCSRDescAttachments" ControlMode="Edit"/>
               </div>
-              <div id="OAPDescriptionAttachmentsUploadBox" class="alert alert-info idUploadBox" style="min-height: 50px">
+              <div id="SampleCSRDescAttachmentsUploadBox" class="alert alert-info idUploadBox" style="min-height: 50px">
                 <xsl:attribute name="data-bind">event: { dragenter: dragEnter, dragleave: dragLeave, drop: drop, dragover: dragOver }</xsl:attribute>
                 <span>Drop your files here...</span>
               </div>
-              <div id="OAPDescriptionAttachmentsListing" class="">
+              <div id="SampleCSRDescAttachmentsListing" class="">
                 <xsl:attribute name="data-bind">with: uploadViewModel</xsl:attribute>
-                <div id="OAPDescriptionAttachmentsId">
+                <div id="SampleCSRDescAttachmentsId">
                   <xsl:attribute name="data-bind">
                     visible:hasContent, template: { name: "uploadedFileTmpl", foreach: ko.utils.arrayFilter(uploads(), function (elementItem) {
-                    return elementItem.targetId() == "OAPDescriptionAttachments";  })}
+                    return elementItem.targetId() == "SampleCSRDescAttachments";  })}
                   </xsl:attribute>
                 </div>
               </div>
@@ -191,24 +191,24 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>QMPAttachments</nobr>
+                <nobr>Secondary Attachments</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <div id="qmpattachmentrow" style="display:none">
-              <SharePoint:FormField runat="server" id="ff4{$Pos}" ControlMode="Edit" FieldName="QMPAttachments" __designer:bind="{ddwrt:DataBind('u',concat('ff4',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@QMPAttachments')}"/>
-              <SharePoint:FieldDescription runat="server" id="ff4description{$Pos}" FieldName="QMPAttachments" ControlMode="Edit"/>
+              <div id="SampleCSRSecondaryAttachmentsRow" style="display:none">
+              <SharePoint:FormField runat="server" id="ff4{$Pos}" ControlMode="Edit" FieldName="SampleCSRSecondaryAttachments" __designer:bind="{ddwrt:DataBind('u',concat('ff4',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@SampleCSRSecondaryAttachments')}"/>
+              <SharePoint:FieldDescription runat="server" id="ff4description{$Pos}" FieldName="SampleCSRSecondaryAttachments" ControlMode="Edit"/>
               </div>
-              <div id="QMPAttachmentsUploadBox" class="alert alert-info idUploadBox" style="min-height: 50px">
+              <div id="SampleCSRSecondaryAttachmentsUploadBox" class="alert alert-info idUploadBox" style="min-height: 50px">
                 <xsl:attribute name="data-bind">event: { dragenter: dragEnter, dragleave: dragLeave, drop: drop, dragover: dragOver }</xsl:attribute>
                 <span>Drop your files here...</span>
               </div>
-              <div id="QMPAttachmentsListing" class="">
+              <div id="SampleCSRSecondaryAttachmentsListing" class="">
                 <xsl:attribute name="data-bind">with: uploadViewModel</xsl:attribute>
-                <div id="QMPAttachmentsId">
+                <div id="SampleCSRSecondaryAttachmentsId">
                   <xsl:attribute name="data-bind">
                     visible:hasContent, template: { name: "uploadedFileTmpl", foreach: ko.utils.arrayFilter(uploads(), function (elementItem) {
-                    return elementItem.targetId() == "QMPAttachments";  }) }
+                    return elementItem.targetId() == "SampleCSRSecondaryAttachments";  }) }
                   </xsl:attribute>
                 </div>
               </div>            
@@ -217,24 +217,24 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>CoverLetterAttachments</nobr>
+                <nobr>Cover Letter Attachments</nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <div id="CoverLetterAttachmentsrow" style="display:none">
-              <SharePoint:FormField runat="server" id="ff5{$Pos}" ControlMode="Edit" FieldName="CoverLetterAttachments" __designer:bind="{ddwrt:DataBind('u',concat('ff5',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@CoverLetterAttachments')}"/>
-              <SharePoint:FieldDescription runat="server" id="ff5description{$Pos}" FieldName="CoverLetterAttachments" ControlMode="Edit"/>
+              <div id="SampleCSRCoverLetterAttachmentsRow" style="display:none">
+              <SharePoint:FormField runat="server" id="ff5{$Pos}" ControlMode="Edit" FieldName="SampleCSRCoverLetterAttachments" __designer:bind="{ddwrt:DataBind('u',concat('ff5',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@SampleCSRCoverLetterAttachments')}"/>
+              <SharePoint:FieldDescription runat="server" id="ff5description{$Pos}" FieldName="SampleCSRCoverLetterAttachments" ControlMode="Edit"/>
               </div>
-              <div id="CoverLetterAttachmentsUploadBox" class="alert alert-info idUploadBox" style="min-height: 50px">
+              <div id="SampleCSRCoverLetterAttachmentsUploadBox" class="alert alert-info idUploadBox" style="min-height: 50px">
                 <xsl:attribute name="data-bind">event: { dragenter: dragEnter, dragleave: dragLeave, drop: drop, dragover: dragOver } </xsl:attribute>
                 <span>Drop your files here...</span>
               </div>
-              <div id="CoverLetterAttachmentsListing" class="">
+              <div id="SampleCSRCoverLetterAttachmentsListing" class="">
                 <xsl:attribute name="data-bind">with: uploadViewModel</xsl:attribute>
-                <div id="CoverLetterAttachmentsId">
+                <div id="SampleCSRCoverLetterAttachmentsId">
                   <xsl:attribute name="data-bind">
                     visible:hasContent, template: { name: "uploadedFileTmpl", foreach: ko.utils.arrayFilter(uploads(), function (elementItem) {
-                    return elementItem.targetId() == "CoverLetterAttachments";  }) }
+                    return elementItem.targetId() == "SampleCSRCoverLetterAttachments";  }) }
                   </xsl:attribute>
                 </div>
               </div>            
@@ -243,14 +243,12 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
-                <nobr>
-                  LastUpdate<span class="ms-formvalidation"> *</span>
-                </nobr>
+                <nobr>Last Updated<span class="ms-formvalidation"> *</span></nobr>
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <SharePoint:FormField runat="server" id="ff6{$Pos}" ControlMode="Edit" FieldName="LastUpdate" __designer:bind="{ddwrt:DataBind('u',concat('ff6',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@LastUpdate')}"/>
-              <SharePoint:FieldDescription runat="server" id="ff6description{$Pos}" FieldName="LastUpdate" ControlMode="Edit"/>
+              <SharePoint:FormField runat="server" id="ff6{$Pos}" ControlMode="Edit" FieldName="SampleCSRLastUpdated" __designer:bind="{ddwrt:DataBind('u',concat('ff6',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@SampleCSRLastUpdated')}"/>
+              <SharePoint:FieldDescription runat="server" id="ff6description{$Pos}" FieldName="SampleCSRLastUpdated" ControlMode="Edit"/>
             </td>
           </tr>
           <tr>
@@ -260,8 +258,8 @@
               </H3>
             </td>
             <td width="400px" valign="top" class="ms-formbody">
-              <SharePoint:FormField runat="server" id="ff7{$Pos}" ControlMode="Edit" FieldName="Comments" __designer:bind="{ddwrt:DataBind('u',concat('ff7',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@Comments')}"/>
-              <SharePoint:FieldDescription runat="server" id="ff7description{$Pos}" FieldName="Comments" ControlMode="Edit"/>
+              <SharePoint:FormField runat="server" id="ff7{$Pos}" ControlMode="Edit" FieldName="SampleCSRComments" __designer:bind="{ddwrt:DataBind('u',concat('ff7',$Pos),'Value','ValueChanged','ID',ddwrt:EscapeDelims(string(@ID)),'@SampleCSRComments')}"/>
+              <SharePoint:FieldDescription runat="server" id="ff7description{$Pos}" FieldName="SampleCSRComments" ControlMode="Edit"/>
             </td>
           </tr>
           <tr id="idAttachmentsRow">
