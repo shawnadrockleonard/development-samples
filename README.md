@@ -2,7 +2,7 @@
 Provides a series of projects to offer a gradual progression of development practices for SharePoint.
 
 # Debug and run locally
-In order to succesfully compile the InfrastructureAsCode.PowerShell and the Sample solution you will also have to download and build in Visual Studio the InfrastructureAsCode.Core and InfrastructureAsCode.Powershell repository and make the dev branch available. The PowerShell solution depends on it. In order to succesfully compile it, make sure that InfrastructureAsCode.Core and InfrastructureAsCode.Powershell are located at the same level as development-samples.
+In order to succesfully compile the Development-Samples solution and projects you will need to clone [Infrastructure-As-Code repository](https://github.com/pinch-perfect/Infrastructure-As-Code) to the same location and level as development-samples.
 
 Example:
 ```
@@ -32,16 +32,12 @@ Please note: This is sample code meant to start the dialog.  It is intended to e
 The SharePoint and Office 365 community is more mature than it was a few years ago.  As always go to http://dev.office.com/patterns-and-practices to see the latest and greatest.  There you will find sample code, guidance, and How To's.  Let's get started!
 </div>
 
-
-Step 1: InfoPath, a sample, its future, and next steps (https://github.com/pinch-perfect/development-samples/tree/master/InfoPath)
-
-Step 2: Out of the Box to emulate InfoPath (https://github.com/pinch-perfect/development-samples/tree/master/Sample01)
-
-Step 3: Customization with KnockoutJS, HTML5, and MVVM patterns
-
-Step 4: SharePoint Add-In
-
-Step 5: Provider Hosted Add-In
+1. InfoPath, a sample, its future, and next steps (InfoPath)
+2. Out of the Box (Sample01)
+3. Out of the Box with configuration (Sample02)
+3. Customization with KnockoutJS, HTML5, and MVVM patterns (Sample03)
+4. SharePoint Add-In (Sample04)
+5. Provider Hosted Add-In (Sample05)
 
 </p>
 

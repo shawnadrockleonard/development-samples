@@ -1,5 +1,4 @@
-﻿using CSR_Sample02.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSR_Sample02
+namespace Sample02
 {
     class Program
     {
@@ -32,7 +31,7 @@ namespace CSR_Sample02
             }
 
 
-            var model = new FileSampleLibraryDefinition();
+            var model = new Sample02LibraryDefinition();
             var jsonPath = string.Format("{0}\\Provisioner.json", pathContent);
             var jsonProvisioner = JsonConvert.SerializeObject(model, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
             {

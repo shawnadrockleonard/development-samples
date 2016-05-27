@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SharePoint.Client;
 
-namespace CSR_Sample03.Models
+namespace Sample02
 {
     /// <summary>
     /// Defines the JSON file which will provision resources
     /// </summary>
-    public class FileSampleLibraryDefinition : SiteProvisionerModel
+    public class Sample02LibraryDefinition : SiteProvisionerModel
     {
-        public FileSampleLibraryDefinition() : base()
+        public Sample02LibraryDefinition() : base()
         {
             this.SiteResources = false; // used to provision list specific attributes not at the site level
             this.Lists.Add(GetSampleLibrary());
@@ -23,7 +23,7 @@ namespace CSR_Sample03.Models
         {
             var newList = new SPListDefinition()
             {
-                ListName = "Sample 03 File Upload",
+                ListName = "Sample 02 File Upload",
                 ListDescription = "Sample library for uploading files.",
                 ListTemplate = ListTemplateType.GenericList,
                 QuickLaunch = QuickLaunchOptions.On,
@@ -57,7 +57,8 @@ namespace CSR_Sample03.Models
                 GroupName = "SampleCSR",
                 InternalName = "SampleCSRDescAttachments",
                 NumLines = 10,
-                RichTextField = false
+                RestrictedMode = false,
+                RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
@@ -67,7 +68,8 @@ namespace CSR_Sample03.Models
                 GroupName = "SampleCSR",
                 InternalName = "SampleCSRCoverLetterAttachments",
                 NumLines = 10,
-                RichTextField = false
+                RestrictedMode = false,
+                RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
@@ -77,7 +79,8 @@ namespace CSR_Sample03.Models
                 GroupName = "SampleCSR",
                 InternalName = "SampleCSRSecondaryAttachments",
                 NumLines = 10,
-                RichTextField = false
+                RestrictedMode = false,
+                RichTextField = true
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.DateTime)
             {
@@ -87,8 +90,7 @@ namespace CSR_Sample03.Models
                 FieldGuid = new Guid("b7e7ca56-d150-4551-91bf-f4c679a018ee"),
                 GroupName = "SampleCSR",
                 InternalName = "SampleCSRLastUpdated",
-                DateFieldFormat = DateTimeFieldFormatType.DateOnly,
-                Required = true
+                DateFieldFormat = DateTimeFieldFormatType.DateOnly
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
@@ -98,7 +100,7 @@ namespace CSR_Sample03.Models
                 GroupName = "SampleCSR",
                 InternalName = "SampleCSRComments",
                 NumLines = 10,
-                RichTextField = false
+                RichTextField = true
             });
 
             return fields;

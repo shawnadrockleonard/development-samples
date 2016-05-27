@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SharePoint.Client;
 
-namespace CSR_Sample01.Models
+namespace Sample01
 {
     /// <summary>
     /// Defines the JSON file which will provision resources
     /// </summary>
-    public class FileSampleLibraryDefinition : SiteProvisionerModel
+    public class Sample01LibraryDefinition : SiteProvisionerModel
     {
-        public FileSampleLibraryDefinition() : base()
+        public Sample01LibraryDefinition() : base()
         {
             this.SiteResources = false; // used to provision list specific attributes not at the site level
             this.Lists.Add(GetSampleLibrary());

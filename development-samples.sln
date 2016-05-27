@@ -6,21 +6,20 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25160B45-3F11-460E-9804-E703B3947FF9}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
-		Scripts\PostBuild.ps1 = Scripts\PostBuild.ps1
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InfoPath", "InfoPath\InfoPath.shproj", "{4A3A4796-D9E3-407E-A811-9FBCBE532C61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSR_Sample01", "Sample01\CSR_Sample01.csproj", "{50797124-7590-4D91-8331-39D55F1F90A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample01", "Sample01\Sample01.csproj", "{50797124-7590-4D91-8331-39D55F1F90A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureAsCode.Core", "..\Infrastructure-As-Code\InfrastructureAsCode.Core\InfrastructureAsCode.Core.csproj", "{EA0D6CF4-74A7-4E3C-9BCD-F25B60C7716F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{DBFE8970-F807-4325-A471-5F3DE07EFD43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSR_Sample02", "Sample02\CSR_Sample02.csproj", "{5B80D494-A68A-427C-A5FF-8682564D08A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample02", "Sample02\Sample02.csproj", "{5B80D494-A68A-427C-A5FF-8682564D08A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSR_Sample03", "Sample03\CSR_Sample03.csproj", "{BA3EAE41-FC05-4827-838F-E2F898771B13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample03", "Sample03\Sample03.csproj", "{BA3EAE41-FC05-4827-838F-E2F898771B13}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

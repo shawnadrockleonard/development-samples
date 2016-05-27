@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CSR_Sample03")]
+[assembly: AssemblyTitle("Sample03")]
 [assembly: AssemblyDescription("Extend the samples using KnockoutJs/HTML5")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("CSR_Sample03")]
+[assembly: AssemblyProduct("Sample03")]
 [assembly: AssemblyCopyright("Copyright © Microsoft Corporation 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

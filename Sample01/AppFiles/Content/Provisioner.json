@@ -15,8 +15,8 @@
       "FieldDefinitions": [
         {
           "FieldGuid": "81b59091-34e8-426e-abe8-9d8031e232fa",
-          "GroupName": "Sample01",
-          "InternalName": "Sample01Description",
+          "GroupName": "SampleCSR",
+          "InternalName": "SampleCSRDescription",
           "DisplayNameMasked": "Description",
           "DisplayName": "Description",
           "fieldType": 3,
@@ -32,17 +32,13 @@
           "ChoiceDefault": "",
           "ChoiceFormat": 0,
           "MultiChoice": false,
-          "PeopleGroupName": null,
           "PeopleOnly": false,
-          "PeopleLookupField": null,
-          "MaxLength": null,
-          "Required": false,
-          "LoadFromJSON": null
+          "Required": false
         },
         {
           "FieldGuid": "e48f3553-498d-4eea-bdcb-a065f24baa72",
-          "GroupName": "Sample01",
-          "InternalName": "Sample01DescAttachments",
+          "GroupName": "SampleCSR",
+          "InternalName": "SampleCSRDescAttachments",
           "DisplayNameMasked": "Description_x0020_Attachments",
           "DisplayName": "Description Attachments",
           "fieldType": 3,
@@ -58,17 +54,13 @@
           "ChoiceDefault": "",
           "ChoiceFormat": 0,
           "MultiChoice": false,
-          "PeopleGroupName": null,
           "PeopleOnly": false,
-          "PeopleLookupField": null,
-          "MaxLength": null,
-          "Required": false,
-          "LoadFromJSON": null
+          "Required": false
         },
         {
           "FieldGuid": "336df8a0-0014-4e4e-9120-7b5362d7ebc7",
-          "GroupName": "Sample01",
-          "InternalName": "Sample01CoverLetterAttachments",
+          "GroupName": "SampleCSR",
+          "InternalName": "SampleCSRCoverLetterAttachments",
           "DisplayNameMasked": "Cover_x0020_Letter_x0020_Attachments",
           "DisplayName": "Cover Letter Attachments",
           "fieldType": 3,
@@ -84,17 +76,13 @@
           "ChoiceDefault": "",
           "ChoiceFormat": 0,
           "MultiChoice": false,
-          "PeopleGroupName": null,
           "PeopleOnly": false,
-          "PeopleLookupField": null,
-          "MaxLength": null,
-          "Required": false,
-          "LoadFromJSON": null
+          "Required": false
         },
         {
           "FieldGuid": "ee3e6f0b-fa54-4956-9709-68919671de5a",
-          "GroupName": "Sample01",
-          "InternalName": "Sample01SecondaryAttachments",
+          "GroupName": "SampleCSR",
+          "InternalName": "SampleCSRSecondaryAttachments",
           "DisplayNameMasked": "Secondary_x0020_Attachments",
           "DisplayName": "Secondary Attachments",
           "fieldType": 3,
@@ -110,17 +98,13 @@
           "ChoiceDefault": "",
           "ChoiceFormat": 0,
           "MultiChoice": false,
-          "PeopleGroupName": null,
           "PeopleOnly": false,
-          "PeopleLookupField": null,
-          "MaxLength": null,
-          "Required": false,
-          "LoadFromJSON": null
+          "Required": false
         },
         {
           "FieldGuid": "b7e7ca56-d150-4551-91bf-f4c679a018ee",
-          "GroupName": "Sample01",
-          "InternalName": "Sample01LastUpdated",
+          "GroupName": "SampleCSR",
+          "InternalName": "SampleCSRLastUpdated",
           "DisplayNameMasked": "Last_x0020_Updated",
           "DisplayName": "Last Updated",
           "fieldType": 4,
@@ -136,17 +120,13 @@
           "ChoiceDefault": "",
           "ChoiceFormat": 0,
           "MultiChoice": false,
-          "PeopleGroupName": null,
           "PeopleOnly": false,
-          "PeopleLookupField": null,
-          "MaxLength": null,
-          "Required": false,
-          "LoadFromJSON": null
+          "Required": false
         },
         {
           "FieldGuid": "d7783199-1226-4097-a48c-caa748f95857",
-          "GroupName": "Sample01",
-          "InternalName": "Sample01Comments",
+          "GroupName": "SampleCSR",
+          "InternalName": "SampleCSRComments",
           "DisplayNameMasked": "Comments",
           "DisplayName": "Comments",
           "fieldType": 3,
@@ -162,12 +142,8 @@
           "ChoiceDefault": "",
           "ChoiceFormat": 0,
           "MultiChoice": false,
-          "PeopleGroupName": null,
           "PeopleOnly": false,
-          "PeopleLookupField": null,
-          "MaxLength": null,
-          "Required": false,
-          "LoadFromJSON": null
+          "Required": false
         }
       ],
       "ListItems": [],

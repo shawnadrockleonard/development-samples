@@ -7,8 +7,8 @@
     <ProjectGuid>{5B80D494-A68A-427C-A5FF-8682564D08A6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSR_Sample02</RootNamespace>
-    <AssemblyName>CSR_Sample02</AssemblyName>
+    <RootNamespace>Sample02</RootNamespace>
+    <AssemblyName>Sample02</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="Models\FileSampleLibraryDefinition.cs" />
+    <Compile Include="Sample02LibraryDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

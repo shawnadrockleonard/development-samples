@@ -7,8 +7,8 @@
     <ProjectGuid>{BA3EAE41-FC05-4827-838F-E2F898771B13}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSR_Sample03</RootNamespace>
-    <AssemblyName>CSR_Sample03</AssemblyName>
+    <RootNamespace>Sample03</RootNamespace>
+    <AssemblyName>Sample03</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="Models\FileSampleLibraryDefinition.cs" />
+    <Compile Include="Sample03LibraryDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
