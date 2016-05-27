@@ -11,10 +11,10 @@ To debug the following project you will need to follow the guidance (https://git
 This sample extends IaC to deploy a Sample sharepoint list with specific column types.  You can use this similiar technique to provision resources into your SharePoint environment
 
 We created a model to extend the site provisioning model with our specific list and columns details.
-<img src="imgs\extend-site-provisioner.PNG" width="500" />
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/extend-site-provisioner.PNG" width="500" />
 
 After debugging the console we receive the outputed JSON file at AppFiles\Content\Provisioner.json
-<img src="imgs/Provision-json-file.PNG" />
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/Provision-json-file.PNG" width="500" />
 
 A video of the screenshots can be found here (https://mix.office.com/watch/19oryzp2n9r1j)
 
@@ -38,11 +38,11 @@ After the Powershell cmdlet Set-IaCProvisionResources executes successfully you 
 ### Videos
 
 Here is a video to watch how you can go from Build to configuration of a SharePoint site.
-<img src="imgs/provision-list-video.PNG" />
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/provision-list-video.PNG" width="500" />
 https://mix.office.com/watch/1uj8pf44hcc15
 
 Here is a video of the configured list in SharePoint
-<img src="imgs/configured-list-usage.png" />
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/configured-list-usage.png" width="500" />
 https://mix.office.com/watch/fy22hj4wxysy
 
 
