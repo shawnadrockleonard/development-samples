@@ -1,23 +1,14 @@
-﻿# development-samples
+﻿# Development-Samples
 InfoPath Example and Description
 
 
 ### Summary ###
 Please note: We will use the succeeding posts to project the form into a full application.  I will provide brief screenshots to detail the form and its purpose.
 
-<div>
-    Ahh InfoPath 2010 and 2013.  What a promising platform and what amazing things you could do with InfoPath.  You may have created minor applications or major enterprise applications with InfoPath.  The back end was XML and as result an ultra portable file format.  The integration with SharePoint made this a fantastic way to design forms, design workflow, and collect digital signatures.  With XML you could push this to an organizational record management system.   You could transform the result however you saw fit.  You could push it to a SQL database and leverage XQuery or other techniques to run reporting.  It seemed like a great platform.  However, Form Services never really panned out to be user friendly, a SharePoint patch could have caused your working form to collapse, or a workstation patch caused your InfoPath Designer or Client to stop functioning correctly.   You developed InfoPath forms with conditional formatting, binding, new schema updates, versions, and XML changes quickly grew to be a mess.  You developed various techniques to manage and work with InfoPath but it never felt "programmer friendly".  Oh and did I mention the limitations with the browser and enterprise configurations.   This part of the development strategy is not to show you how to develop for InfoPath but to start the dialog on how to progress away from InfoPath using a real world example.    Caveat: the example is an actual application that quickly ran into web server limitations along with authentication limitations.  It began as a promising development experiment but quickly became frustrating to users and developers.
-</div>
+InfoPath 2010/2013 was a promising platform which allowed non-developers to enable and deploy amazing things.  You could create minor applications or major enterprise applications with InfoPath.  The back end is XML which was an ultra portable file format.  The integration with SharePoint made this a fantastic way to design forms, design workflow, attach binary, and collect digital signatures.  With XML you could push this to an organizational record management system or transform the result data however you saw fit.  You could push it to a SQL database and leverage XQuery or other techniques to run reporting.   However, Form Services never panned out to be user friendly.  A SharePoint patch caused your working form to collapse or a workstation patch caused your InfoPath Designer or Client to stop functioning correctly.   You developed InfoPath forms with conditional formatting, binding, new schema updates, and versions.  You developed various techniques to manage and work with InfoPath but it never felt "programmer friendly".    This part of the development strategy is not to show you how to develop for InfoPath but to start the dialog on how to progress away from InfoPath using a real world example.    This particular example is a mock-up of an actual application that ran into web server, configuration, and authentication limitations.  It began as a promising development experiment but quickly became frustrating to users and developers (i.e., Server limitations, File attachment size limitations, User profile integration, and security based conditional activities.)   We will use the succeeding posts to project the form into a full application. 
 
-<div>
-    The below sample with a break down of its components has a correlated component in SharePoint out of the box.  We will dive much deeper into SharePoint with each of this components.
-</div>
 
-<br />
-
-<div>
-    The intent of this form was to collect some metadata long with attachments.  Word documents, Powerpoints, and other files.  The aggregate of this metadata nd the files would be submitted for approval in some specific workflow.
-</div>
+The intent of this form was to collect metadata with attachments (i.e., MS Word, MS PowerPoint, and/or other files.)  The aggregate of this metadata and the files were submitted for approval via workflow.
 <figure>
     <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-sample1.PNG" width="500" />
     <br />
@@ -26,9 +17,7 @@ Please note: We will use the succeeding posts to project the form into a full ap
 
 <br />
 
-<div>
-    InfoPath is based completely on a XML with a well defined schema.  The IDE is super easy to use and allows you to rapidly create fields and mappings.
-</div>
+InfoPath is based completely on a XML with a well defined schema. The IDE is easy to use and allows you to rapidly create fields and mappings.
 <figure>
     <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-schema.PNG" width="500" />
     <br />
@@ -38,9 +27,7 @@ Please note: We will use the succeeding posts to project the form into a full ap
 
 <br />
 
-<div>
-    The output of the form is raw XML with various namespaces that InfoPath and SharePoint use to render and process the XML.
-</div>
+The output of the form is raw XML with various namespaces that InfoPath and SharePoint use to render and process the XML.
 <figure>
     <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-samplexml.PNG" width="500" />
     <br />
@@ -49,9 +36,11 @@ Please note: We will use the succeeding posts to project the form into a full ap
 
 
 <br />
-<div>
-    InfoPath leverage XSL to transform the XML in a human readable format.  XSL is the backbone of many SharePoint Add-Ins so it made since to leverage this core technology.  The neat part of InfoPath was the ability to leverage this XSL to render in Form Services as well as in external systems if a craft developer could crack open the manifest.
-</div>
+InfoPath leverages Extensible Stylesheet Language (XSL) to transform the XML into a view.  XSL is the backbone of many SharePoint Add-Ins and continues to be the core backbone for rendering components of SharePoint into HTML.  We will navigate through each sample to identify similiar capabilities with development:
+
+1. XSD/XML schema = List Definition
+2. XSL = Convert list schema to HTML via DataViewWebParts/ListViewWebParts
+3. Conditional binding and controls = SharePoint web controls and jQuery
 <figure>
     <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/InfoPath/imgs/infopath-samplexsl.PNG" width="500" />
     <br />
