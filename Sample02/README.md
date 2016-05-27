@@ -48,13 +48,13 @@ The following videos will demonstrate how to customize a SharePoint list with cu
 
 Video: Configure the list in SharePoint, use SharePoint designer to create new forms, upload SiteAssets from this project, remove XSL from CustomNew form and replace with XslLink from Site assets.
 
-<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample02/imgs/new-list-file-upload.pngg" width="500" />
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample02/imgs/new-list-file-upload.png" width="500" />
 https://mix.office.com/watch/bwuc6qngczko
 
 
 Video: The Sample02New.xsl file has rearranged fields in the display and hides the title field.  Set the CustomNew form as the default form and display the new html markup.
 
-<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample02/imgs/configured-list-with-xsl.png" width="500" />
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample02/imgs/configured-list-with-xsl.PNG" width="500" />
 https://mix.office.com/watch/2t5mkf31ks43
 
 
