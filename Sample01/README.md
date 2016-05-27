@@ -38,12 +38,16 @@ After the Powershell cmdlet Set-IaCProvisionResources executes successfully you 
 ### Videos
 
 Here is a video to watch how you can go from Build to configuration of a SharePoint site.
+
 <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/provision-list-video.PNG" width="500" />
 https://mix.office.com/watch/1uj8pf44hcc15
 
+<br />
 Here is a video of the configured list in SharePoint
+
 <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/configured-list-usage.png" width="500" />
 https://mix.office.com/watch/fy22hj4wxysy
+
 
 
 ### Disclaimer ###
