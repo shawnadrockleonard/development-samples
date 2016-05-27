@@ -121,7 +121,11 @@
     <Content Include="AppFiles\SiteAssets\js\Sample02New.js" />
     <Content Include="AppFiles\SiteAssets\xsl\Sample02Display.xsl" />
     <Content Include="AppFiles\SiteAssets\xsl\Sample02New.xsl" />
+    <Content Include="imgs\configured-form-javascript.png" />
+    <Content Include="imgs\configured-list-with-xsl.PNG" />
+    <Content Include="imgs\extend-site-provisioner.PNG" />
     <Content Include="imgs\new-list-file-upload.png" />
+    <Content Include="imgs\Provision-json-file.PNG" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

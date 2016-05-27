@@ -6,9 +6,12 @@ This sample project defines a Sample 01 Upload list with a variety of columns in
 Expected output from running the console is a file located at AppFiles\Content\Provisioner.json.  We will pass this file into our Infrastructure-As-Code commands to provision resources.  
 For this sample we will use a Site Provisioner Model to define our list and its fields.  By automating this process we ensure that the list and its fields are the same in any SharePoint site where it is run.  We can check the .JSON file into source control to version history the Site definition.
 
-### Debug and run locally
+### Prerequisites
 To debug the following project you will need to follow the guidance (https://github.com/pinch-perfect/Infrastructure-As-Code/blob/master/README.md) and ensure you have the Infrastructure-As-Code repository locally.
 This sample extends IaC to deploy a Sample sharepoint list with specific column types.  You can use this similiar technique to provision resources into your SharePoint environment
+
+
+### Debug and run locally
 
 We created a model to extend the site provisioning model with our specific list and columns details.
 <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample01/imgs/extend-site-provisioner.PNG" width="500" />
@@ -19,7 +22,7 @@ After debugging the console we receive the outputed JSON file at AppFiles\Conten
 A video of the screenshots can be found here (https://mix.office.com/watch/19oryzp2n9r1j)
 
 
-You can however just build the IaC project, open a powershell command window, and execute the cmdlets below:
+We've included the providioner.json in the repo.  If you've performed the prerequisites you can open a powershell window and execute the cmdlets below:
 ```powershell
 cd ("{0}\{1}\Documents\WindowsPowerShell\Modules\InfrastructureAsCode.Powershell" -f $env:HOMEDRIVE,$env:HOMEPATH)
 
