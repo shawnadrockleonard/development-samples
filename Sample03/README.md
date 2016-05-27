@@ -1,36 +1,56 @@
 ﻿# development-samples
-Customization
+Sample 03:  File Upload with KnockoutJs, jQuery, HTML5, and SharePoint REST API's
 
-### Summary ###
-This sample powershell project will help define a list with a variety of columns.  After building the solution it should deploy the module to your home directory.  Once deployed the module and its cmd-lets will be available for use.  These cmd-lets will configure a SharePoint site based on the JSON file specified.  For this sample we will use a Site Provisioner Model to define our list and its fields.  We will run a cmd-let to generate the JSON file that we will feed into the ETL cmd-let to provision the list and its fields.  By automating this process we ensure that the list and its fields are the same in any SharePoint site where it is run.  We can check the .JSON file into source control to version history the Site definition.
+## Summary
+This sample project defines a Sample 03 Upload list with a variety of columns in the Sample03LibraryDefinition.cs file.  
+Expected output from running the console is a file located at AppFiles\Content\Provisioner.json.  We will pass this file into our Infrastructure-As-Code commands to provision resources.  
+For this sample we will use a Site Provisioner Model to define our list and its fields.  By automating this process we ensure that the list and its fields are the same in any SharePoint site where it is run.  We can check the .JSON file into source control to version history the Site definition.
 
-#Debug and run locally
+### Prerequisites
 To debug the following project you will need to follow the guidance (https://github.com/pinch-perfect/Infrastructure-As-Code/blob/master/README.md) and ensure you have the Infrastructure-As-Code repository locally.
+This sample extends IaC to deploy a Sample sharepoint list with specific column types.  You can use this similiar technique to provision resources into your SharePoint environment
 
 
-#Running the sample
-This sample extends IaC to deploy Sample sharepoint list with specific column types.  You can use this similiar technique to provision resources into your SharePoint environment
+We created a model to extend the site provisioning model with our specific list and columns details.
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample03/imgs/extend-site-provisioner.PNG" width="500" />
 
-We have created a model to extend the site provisioning model with our specific list and columns details.
-<img src="imgs\extend-site-provisioner.PNG" width="500" />
+After debugging the console we receive the outputed JSON file at AppFiles\Content\Provisioner.json
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample03/imgs/Provision-json-file.PNG" width="500" />
 
-This project will compile as a Binary Powershell module and deployed to your [Users/Documents/WindowsPowershell/Module/CSR_Sample02] folder.  If you attempt to debug the project and it does not launch Powershell, navigate to the Project Debug tab and specified the external program powershell.exe with a -noexit argument.  
-<img src="imgs\project-config-powershell-debug.PNG" width="500" />
+A video of the screenshots can be found here (https://mix.office.com/watch/19oryzp2n9r1j)
 
 
-You can however just build the project and then open a powershell windows and execute the cmdlets below:
+We've included the provisioner.json in the repo.  If you've performed the prerequisites you can open a powershell window and execute the cmdlets below:
 ```powershell
-Connect-SPIaC –Url https://[tenant].sharepoint.com –UserName "[user]@[tenant].onmicrosoft.com
-$RelativeOrFullPath = "c:\[YOUR REPO FOLDER]\development-samples\Sample02\AppFiles\"
-Add-IaCSample03Definition -RelativePath $RelativeOrFullPath -Verbose
+cd ("{0}\{1}\Documents\WindowsPowerShell\Modules\InfrastructureAsCode.Powershell" -f $env:HOMEDRIVE,$env:HOMEPATH)
+
+Connect-SPIaC –Url https://[tenant].sharepoint.com –UserName "[user]@[tenant].onmicrosoft.com"
+
+## EX [REPO Drive]\[REPO Path]\development-samples\Sample03\AppFiles
+$RelativeOrFullPath = "Local Path to folder where files will be read" 
+
+## Create the Sample 03 File upload list
 Set-IaCProvisionResources -SiteContent $RelativeOrFullPath -Verbose
+
+## Upload site assets from the AppFiles\SiteAssets folder
 Set-IaCProvisionAssets -SiteContent $RelativeOrFullPath -Verbose
+
 Disconnect-SPIaC
 ```
-At the root of the project is a sample .ps1 file which will run the same series of commands.
 
-After the Powershell cmdlet Set-IaCProvisionResources has executed successfully you should see a list "Sample 02 File Upload" in your Site.  The following videos will demonstrate how to custom a SharePoint form, create a new form, extract the XSL, insert a Content Editor web part, and enhance the usability of the form.  You can quickly see that the Out of the Box controls are very similiar to InfoPath.  The control in native SharePoint however, do not suffer from a variety of file upload limits and schema drift.
+After the Powershell cmdlet Set-IaCProvisionResources executes successfully you should see a list "Sample 03 File Upload" in your Site.  
 
+## Videos
+We are not going to screen capture creating Custom Forms in the newly provisioned SharePoint list.  You will duplicate this effort by following the videos found [Sample02\readme.md](https://github.com/pinch-perfect/development-samples/blob/master/Sample02/README.md)
+
+
+Here is a video to watch the completed results from
+1 Use the PowerShell Cmd-Lets to create a Sample 03 file upload list and upload Site Assets
+2 Use Custom forms for New, Edit, and Display actions in the configured SharePoint list.
+3 Walk through of the outcome, New form with uploading attachments, View the results with a customized screen, and Edit the form by moving the attachment to a separate field.
+
+<img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample03/imgs/provision-list-video.PNG" width="500" />
+https://mix.office.com/watch/1chj3lxmaa387
 
 
 

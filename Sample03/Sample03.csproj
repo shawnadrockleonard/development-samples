@@ -122,9 +122,7 @@
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure-As-Code\InfrastructureAsCode.Core\InfrastructureAsCode.Core.csproj">
       <Project>{ea0d6cf4-74a7-4e3c-9bcd-f25b60c7716f}</Project>
@@ -149,6 +147,9 @@
     <Content Include="AppFiles\SiteAssets\XSL\Sample03Edit.xsl" />
     <Content Include="AppFiles\SiteAssets\XSL\Sample03View.xsl" />
     <Content Include="AppFiles\SiteAssets\XSL\Sample03New.xsl" />
+    <Content Include="imgs\extend-site-provisioner.PNG" />
+    <Content Include="imgs\Provision-json-file.PNG" />
+    <Content Include="imgs\provision-list-video.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

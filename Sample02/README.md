@@ -1,5 +1,5 @@
 ﻿# development-samples
-Sample 02
+Sample 02: Customizing the out of the box experience with CSS and jQuery
 
 ## Summary
 This sample project defines a Sample 02 Upload list with a variety of columns in the Sample02LibraryDefinition.cs file.  
@@ -11,8 +11,6 @@ To debug the following project you will need to follow the guidance (https://git
 This sample extends IaC to deploy a Sample sharepoint list with specific column types.  You can use this similiar technique to provision resources into your SharePoint environment
 
 
-### Debug and run locally
-
 We created a model to extend the site provisioning model with our specific list and columns details.
 <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample02/imgs/extend-site-provisioner.PNG" width="500" />
 
@@ -22,7 +20,7 @@ After debugging the console we receive the outputed JSON file at AppFiles\Conten
 A video of the screenshots can be found here (https://mix.office.com/watch/19oryzp2n9r1j)
 
 
-We've included the providioner.json in the repo.  If you've performed the prerequisites you can open a powershell window and execute the cmdlets below:
+We've included the provisioner.json in the repo.  If you've performed the prerequisites you can open a powershell window and execute the cmdlets below:
 ```powershell
 cd ("{0}\{1}\Documents\WindowsPowerShell\Modules\InfrastructureAsCode.Powershell" -f $env:HOMEDRIVE,$env:HOMEPATH)
 
