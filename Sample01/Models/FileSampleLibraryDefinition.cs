@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SharePoint.Client;
 
-namespace InfrastructureAsCode.Powershell.Sample01.Models
+namespace CSR_Sample01.Models
 {
     /// <summary>
     /// Defines the JSON file which will provision resources

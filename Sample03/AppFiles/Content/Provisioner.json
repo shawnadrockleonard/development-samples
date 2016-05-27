@@ -121,7 +121,7 @@
           "ChoiceFormat": 0,
           "MultiChoice": false,
           "PeopleOnly": false,
-          "Required": false
+          "Required": true
         },
         {
           "FieldGuid": "d7783199-1226-4097-a48c-caa748f95857",

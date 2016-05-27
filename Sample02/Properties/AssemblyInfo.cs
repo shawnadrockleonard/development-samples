@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("InfrastructureAsCode.Powershell.Sample02")]
+[assembly: AssemblyTitle("CSR_Sample02")]
 [assembly: AssemblyDescription("Provides a sample for managing the lifecycle of a customized SharePoint list")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("InfrastructureAsCode.Powershell.Sample02")]
+[assembly: AssemblyProduct("CSR_Sample02")]
 [assembly: AssemblyCopyright("Copyright © Microsoft Corporation 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

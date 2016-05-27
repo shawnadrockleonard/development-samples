@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA3EAE41-FC05-4827-838F-E2F898771B13}</ProjectGuid>
+    <ProjectGuid>{5B80D494-A68A-427C-A5FF-8682564D08A6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InfrastructureAsCode.Powershell.Sample03</RootNamespace>
-    <AssemblyName>InfrastructureAsCode.Powershell.Sample03</AssemblyName>
+    <RootNamespace>CSR_Sample02</RootNamespace>
+    <AssemblyName>CSR_Sample02</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -116,43 +116,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="AppFiles\Content\Provisioner.json" />
-    <None Include="AppFiles\SiteAssets\JS\knockout.validation.min.js.map" />
-    <None Include="packages.config" />
-    <None Include="README.md" />
+    <Content Include="AppFiles\SiteAssets\css\Sample02.css" />
+    <Content Include="AppFiles\SiteAssets\html\Sample02New.html" />
+    <Content Include="AppFiles\SiteAssets\js\Sample02New.js" />
+    <Content Include="AppFiles\SiteAssets\xsl\Sample02Display.xsl" />
+    <Content Include="AppFiles\SiteAssets\xsl\Sample02New.xsl" />
+    <Content Include="imgs\new-list-file-upload.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure-As-Code\InfrastructureAsCode.Core\InfrastructureAsCode.Core.csproj">
       <Project>{ea0d6cf4-74a7-4e3c-9bcd-f25b60c7716f}</Project>
       <Name>InfrastructureAsCode.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Infrastructure-As-Code\InfrastructureAsCode.Powershell\InfrastructureAsCode.Powershell.csproj">
-      <Project>{20c0ff0d-dea3-45f8-bc4c-8896c3926265}</Project>
-      <Name>InfrastructureAsCode.Powershell</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppFiles\SiteAssets\CSS\Sample03.css" />
-    <Content Include="AppFiles\SiteAssets\JS\knockout.mapping-latest.debug.js" />
-    <Content Include="AppFiles\SiteAssets\JS\knockout.mapping-latest.js" />
-    <Content Include="AppFiles\SiteAssets\JS\knockout.validation.js" />
-    <Content Include="AppFiles\SiteAssets\JS\knockout.validation.min.js" />
-    <Content Include="AppFiles\SiteAssets\JS\ns.models.js" />
-    <Content Include="AppFiles\SiteAssets\JS\ns.utils.js" />
-    <Content Include="AppFiles\SiteAssets\JS\ns.sp.js" />
-    <Content Include="AppFiles\SiteAssets\HTML\Sample03Edit.html" />
-    <Content Include="AppFiles\SiteAssets\JS\Sample03Edit.js" />
-    <Content Include="AppFiles\SiteAssets\HTML\Sample03View.html" />
-    <Content Include="AppFiles\SiteAssets\JS\Sample03View.js" />
-    <Content Include="AppFiles\SiteAssets\HTML\Sample03New.html" />
-    <Content Include="AppFiles\SiteAssets\JS\Sample03New.js" />
-    <Content Include="AppFiles\SiteAssets\XSL\Sample03Edit.xsl" />
-    <Content Include="AppFiles\SiteAssets\XSL\Sample03View.xsl" />
-    <Content Include="AppFiles\SiteAssets\XSL\Sample03New.xsl" />
+    <None Include="app.config" />
+    <None Include="AppFiles\Content\Provisioner.json" />
+    <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

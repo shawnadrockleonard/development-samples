@@ -14,7 +14,7 @@ This sample extends IaC to deploy Sample sharepoint list with specific column ty
 We have created a model to extend the site provisioning model with our specific list and columns details.
 <img src="imgs\extend-site-provisioner.PNG" width="500" />
 
-This project will compile as a Binary Powershell module and deployed to your [Users/Documents/WindowsPowershell/Module/InfrastructureAsCode.Powershell.Sample01] folder.  If you attempt to debug the project and it does not launch Powershell, navigate to the Project Debug tab and specified the external program powershell.exe with a -noexit argument.  
+This project will compile as a Binary Powershell module and deployed to your [Users/Documents/WindowsPowershell/Module/CSR_Sample01] folder.  If you attempt to debug the project and it does not launch Powershell, navigate to the Project Debug tab and specified the external program powershell.exe with a -noexit argument.  
 <img src="imgs\project-config-powershell-debug.PNG" width="500" />
 
 

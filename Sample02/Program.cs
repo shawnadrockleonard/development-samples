@@ -1,5 +1,4 @@
-﻿using InfrastructureAsCode.Powershell.CmdLets;
-using InfrastructureAsCode.Powershell.Sample02.Models;
+﻿using CSR_Sample02.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InfrastructureAsCode.Powershell.Sample02
+namespace CSR_Sample02
 {
     class Program
     {
