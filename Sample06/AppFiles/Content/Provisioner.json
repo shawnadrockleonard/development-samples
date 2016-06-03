@@ -1,0 +1,82 @@
+{
+  "SiteResources": false,
+  "Lists": [
+    {
+      "ListName": "Sample Version History",
+      "InternalName": "SampleVersionHistory",
+      "ListDescription": "Sample Version History for demonstrating version history and append changes.",
+      "QuickLaunch": 1,
+      "ListTemplate": 100,
+      "ContentTypeEnabledOverride": false,
+      "ContentTypeEnabled": false,
+      "Views": [],
+      "ContentTypes": [],
+      "HasContentTypes": false,
+      "FieldDefinitions": [
+        {
+          "FieldGuid": "d9c65062-cde4-49be-908b-be2982c70dcf",
+          "GroupName": "SampleVH",
+          "InternalName": "My_x0020_Notes",
+          "DisplayNameMasked": "My_x0020_Notes",
+          "DisplayName": "My Notes",
+          "fieldType": 3,
+          "AddToDefaultView": true,
+          "HiddenField": false,
+          "Description": "Contains versioned notes",
+          "NumLines": 10,
+          "RichTextField": true,
+          "RestrictedMode": true,
+          "AppendOnly": true,
+          "DateFieldFormat": 1,
+          "FieldIndexed": false,
+          "FieldChoices": [],
+          "ChoiceDefault": "",
+          "ChoiceFormat": 0,
+          "MultiChoice": false,
+          "PeopleOnly": false,
+          "Required": false
+        },
+        {
+          "FieldGuid": "a41e9f2a-dc8b-491c-8078-5a1f5082b1e4",
+          "GroupName": "SampleVH",
+          "InternalName": "My_x0020_Choice",
+          "DisplayNameMasked": "My_x0020_Choice",
+          "DisplayName": "My Choice",
+          "fieldType": 6,
+          "AddToDefaultView": false,
+          "HiddenField": false,
+          "Description": "Contains choice for version history",
+          "NumLines": 0,
+          "RichTextField": false,
+          "RestrictedMode": true,
+          "AppendOnly": false,
+          "DateFieldFormat": 1,
+          "FieldIndexed": false,
+          "FieldChoices": [
+            {
+              "Choice": "None of the Above",
+              "DefaultChoice": true
+            },
+            {
+              "Choice": "Student #1",
+              "DefaultChoice": false
+            },
+            {
+              "Choice": "Student #2",
+              "DefaultChoice": false
+            }
+          ],
+          "ChoiceDefault": "None of the Above",
+          "ChoiceFormat": 0,
+          "MultiChoice": false,
+          "PeopleOnly": false,
+          "Required": false
+        }
+      ],
+      "ListItems": [],
+      "Versioning": true,
+      "EnableFolderCreation": false
+    }
+  ],
+  "Groups": []
+}
