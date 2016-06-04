@@ -98,22 +98,21 @@ function getListItemBySoap(listWebUrl, listName, listItemId, fieldName) {
 
     var glisoapdef = new jQuery.Deferred();
 
-    var SOAPEnvelope = {};
-    SOAPEnvelope.header = "<soap:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'><soap:Body>";
-    SOAPEnvelope.footer = "</soap:Body></soap:Envelope>";
-    SOAPEnvelope.opheader = "<GetVersionCollection xmlns=\"http://schemas.microsoft.com/sharepoint/soap/\">";
-    SOAPEnvelope.opfooter = "</GetVersionCollection>";
-    SOAPEnvelope.payload = String.format("<strlistID>{0}</strlistID><strlistItemID>{1}</strlistItemID><strFieldName>{2}</strFieldName>", listName, listItemId, fieldName);
+    var soapHeader = "http://schemas.microsoft.com/sharepoint/soap/";
+    var soapBody = String.format("<soap:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'><soap:Body>"
+        + "<GetVersionCollection xmlns=\"{0}\">"
+        + "<strlistID>{1}</strlistID><strlistItemID>{2}</strlistItemID><strFieldName>{3}</strFieldName>"
+        + "</GetVersionCollection>"
+        + "</soap:Body></soap:Envelope>", soapHeader, listName, listItemId, fieldName);
 
-    var msg = SOAPEnvelope.header + SOAPEnvelope.opheader + SOAPEnvelope.payload + SOAPEnvelope.opfooter + SOAPEnvelope.footer;
-    var soapAction = "http://schemas.microsoft.com/sharepoint/soap/GetVersionCollection";
+    var soapAction = String.format("{0}GetVersionCollection", soapHeader);
 
     $.ajax({
         url: listWebUrl + "/_vti_bin/lists.asmx",
         type: "POST",
         async: false,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("SOAPAction", soapAction);
+            xhr.setRequestHeader("SOAPAction", soapBody);
         },
         dataType: "xml",
         data: msg,

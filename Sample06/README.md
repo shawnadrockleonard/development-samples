@@ -29,7 +29,7 @@ Connect-SPIaC –Url https://[tenant].sharepoint.com –UserName "[user]@[tenant
 ## EX [REPO Drive]\[REPO Path]\development-samples\Sample06\AppFiles
 $RelativeOrFullPath = "Local Path to folder where files will be read" 
 
-## Create the Sample 03 File upload list
+## Create the Sample Version History list
 Set-IaCProvisionResources -SiteContent $RelativeOrFullPath -Verbose
 
 ## Upload site assets from the AppFiles\SiteAssets folder
@@ -45,9 +45,9 @@ We are not going to screen capture creating Custom Forms in the newly provisione
 
 
 Here is a video to watch the completed results from
-1 Use the PowerShell Cmd-Lets to create a Sample Version History list and upload Site Assets
-2 Use Custom forms for New, Edit, and Display actions in the configured SharePoint list.
-3 Walk through of the outcome, New form with uploading attachments, View the results with a customized screen, and Edit the form by moving the attachment to a separate field.
+1. Use the PowerShell Cmd-Lets to create a Sample Version History list and upload Site Assets
+2. Use Custom forms for New, Edit, and Display actions in the configured SharePoint list.
+3. Walk through of the outcome, New form with uploading attachments, View the results with a customized screen, and Edit the form by moving the attachment to a separate field.
 
 <img src="https://raw.githubusercontent.com/pinch-perfect/development-samples/master/Sample03/imgs/provision-list-video.PNG" width="500" />
 https://mix.office.com/watch/1chj3lxmaa387
