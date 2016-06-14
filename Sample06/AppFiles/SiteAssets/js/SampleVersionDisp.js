@@ -112,10 +112,10 @@ function getListItemBySoap(listWebUrl, listName, listItemId, fieldName) {
         type: "POST",
         async: false,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("SOAPAction", soapBody);
+            xhr.setRequestHeader("SOAPAction", soapAction);
         },
         dataType: "xml",
-        data: msg,
+        data: soapBody,
         contentType: "text/xml;charset='utf-8'",
         complete: function (xData, status) {
             var historyOptions = [];
