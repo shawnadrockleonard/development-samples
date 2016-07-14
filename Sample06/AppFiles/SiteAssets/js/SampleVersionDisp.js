@@ -10,6 +10,7 @@ $(document).ready(function () {
     var listName = "Sample Version History"
     var listItemId = getQueryStringParameter("ID");
     var fieldName = "My_x0020_Notes";
+    var listId = _spPageContextInfo.pageListId;
 
     getListItemBySPServices(listName, listItemId, fieldName)
         .done(function (dataArray) {
@@ -37,6 +38,24 @@ $(document).ready(function () {
             console.log(errorThrown.message);
         });
 
+    getListItemByVersionPage(listWebUrl, listId, listItemId, fieldName)
+        .done(function (versionArray) {
+            var htmlDiv = "";
+            for (var idx = 0; idx < versionArray.length; idx++) {
+
+                var item = versionArray[idx];
+                var itemdate = new Date(item.Modified);
+                console.log(String.format("Trimmed - Version: {0} By: {2}", item.Label, item.Editor));
+                for (var jdx = 0; jdx < item.vprops.length; jdx++) {
+                    htmlDiv += "<div>" + item.Editor + " (" + moment(itemdate).format('MM/DD/YYYY, h:mm a') + ")" + item.vprops[jdx].FieldValue + "</div>";
+                }
+            }
+            jQuery("#myNotesVersion").html(htmlDiv);
+        })
+        .fail(function (sender, args) {
+
+            console.log(args);
+        });
 });
 
 
@@ -136,4 +155,67 @@ function getListItemBySoap(listWebUrl, listName, listItemId, fieldName) {
     });
 
     return glisoapdef.promise();
+}
+
+function getListItemByVersionPage(listWebUrl, listId, listItemId, fieldName) {
+
+    var glibvpdef = new jQuery.Deferred();
+
+    var versionsUrl = listWebUrl + '/_layouts/versions.aspx?list=' + listId + '&ID=' + listItemId;
+
+    jQuery.get(versionsUrl)
+     .done(function (data) {
+
+         var entries = [];
+         var versionList = $(data).find('table.ms-settingsframe');
+         if (typeof (versionList) !== typeof (undefined) && versionList !== null) {
+
+             versionList.find('tbody > tr').each(function (i, trval) {
+                 // pulls every 2 rows
+                 if (i > 0 && (i - 1) % 2 == 0) {
+                     try {
+                         var verRow = $(this); //get version row
+                         var versionLabel = verRow.find('td:first').html().trim();
+                         var versionDateElement = verRow.find('table[ctxname=\"ctxVer\"] a'); // Date for modification
+                         var versionUserElement = verRow.find('.ms-imnSpan a:nth-child(2)'); // User for Modification
+                         if (versionLabel !== ""
+                             && (versionDateElement !== null && versionDateElement.length > 0)
+                             && (versionUserElement !== null && versionUserElement.length > 0)) {
+                             var versionDate = versionDateElement.html().trim();
+                             var versionUser = versionUserElement.html().trim();
+
+                             var propsRow = verRow.next(); //get properties row
+                             var properties = propsRow.find("table[role=\"presentation\"] tr").map(function (index, val) {
+
+                                 var trproperty = jQuery(val);
+                                 if (val.id.indexOf(fieldName) !== -1) {
+                                     var entryProperties = {
+                                         id: val.id,
+                                         title: trproperty.find("td:first").html().trim(),
+                                         FieldValue: trproperty.find("td:nth-child(2)").html().trim()
+                                     };
+                                     return (entryProperties);
+                                 }
+                             });
+                             var entry = {
+                                 Label: versionLabel,
+                                 Modified: versionDate,
+                                 Editor: versionUser,
+                                 vprops: properties
+                             };
+                             entries.push(entry);
+                         }
+                     } catch (error) {
+                         console.log("parse error " + error.message);
+                     }
+                 }
+             });
+         }
+         glibvpdef.resolve(entries);
+     })
+    .fail(function (sender, args) {
+        glibvpdef.reject(sender, args);
+    });
+
+    return glibvpdef.promise();
 }

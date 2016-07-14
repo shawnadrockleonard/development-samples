@@ -132,6 +132,16 @@
           <tr>
             <td width="190px" valign="top" class="ms-formlabel">
               <H3 class="ms-standardheader">
+                <nobr>My Notes (HTML SCRAPING)</nobr>
+              </H3>
+            </td>
+            <td width="400px" valign="top" class="ms-formbody">
+              <div id="myNotesVersion"></div>
+            </td>
+          </tr>
+          <tr>
+            <td width="190px" valign="top" class="ms-formlabel">
+              <H3 class="ms-standardheader">
                 <nobr>My Choice</nobr>
               </H3>
             </td>
