@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample02", "Sample02\Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample03", "Sample03\Sample03.csproj", "{BA3EAE41-FC05-4827-838F-E2F898771B13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample04-SPAddIn", "Sample04-SPAddIn\Sample04-SPAddIn.csproj", "{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample04", "Sample04\Sample04.csproj", "{1D28EC02-6D96-4F17-BB8E-DE7676D032C8}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		InfoPath\InfoPath.projitems*{4a3a4796-d9e3-407e-a811-9fbcbe532c61}*SharedItemsImports = 13
@@ -46,6 +50,16 @@ Global
 		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA3EAE41-FC05-4827-838F-E2F898771B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A06963-28E5-4F6B-A5A1-B04A487EC02C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1D28EC02-6D96-4F17-BB8E-DE7676D032C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D28EC02-6D96-4F17-BB8E-DE7676D032C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D28EC02-6D96-4F17-BB8E-DE7676D032C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D28EC02-6D96-4F17-BB8E-DE7676D032C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
