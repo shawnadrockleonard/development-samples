@@ -15,7 +15,6 @@ namespace Sample04
     {
         public Sample04LibraryDefinition() : base()
         {
-            this.SiteResources = false; // used to provision list specific attributes not at the site level
             this.Lists.Add(GetSampleLibrary());
         }
 
@@ -41,7 +40,7 @@ namespace Sample04
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
                AddToDefaultView = true,
-               DisplayName = "Description",
+               Title = "Description",
                Description = "Contains the description of the database",
                FieldGuid = new Guid("81b59091-34e8-426e-abe8-9d8031e232fa"),
                GroupName = "SampleCSR",
@@ -51,7 +50,7 @@ namespace Sample04
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
-                DisplayName = "Description Attachments",
+                Title = "Description Attachments",
                 Description = "Contains the hyperlinks to the attachments for the database",
                 FieldGuid = new Guid("e48f3553-498d-4eea-bdcb-a065f24baa72"),
                 GroupName = "SampleCSR",
@@ -61,7 +60,7 @@ namespace Sample04
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
-                DisplayName = "Cover Letter Attachments",
+                Title = "Cover Letter Attachments",
                 Description = "Contains the hyperlinks to the cover letter attachments for the database",
                 FieldGuid = new Guid("336df8a0-0014-4e4e-9120-7b5362d7ebc7"),
                 GroupName = "SampleCSR",
@@ -71,7 +70,7 @@ namespace Sample04
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
-                DisplayName = "Secondary Attachments",
+                Title = "Secondary Attachments",
                 Description = "Contains the hyperlinks to the secondary attachments for the database",
                 FieldGuid = new Guid("ee3e6f0b-fa54-4956-9709-68919671de5a"),
                 GroupName = "SampleCSR",
@@ -82,7 +81,7 @@ namespace Sample04
             fields.Add(new SPFieldDefinitionModel(FieldType.DateTime)
             {
                 AddToDefaultView = true,
-                DisplayName = "Last Updated",
+                Title = "Last Updated",
                 Description = "Contains the date this was last updated",
                 FieldGuid = new Guid("b7e7ca56-d150-4551-91bf-f4c679a018ee"),
                 GroupName = "SampleCSR",
@@ -92,7 +91,7 @@ namespace Sample04
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
-                DisplayName = "Comments",
+                Title = "Comments",
                 Description = "Contains user comments for the database",
                 FieldGuid = new Guid("d7783199-1226-4097-a48c-caa748f95857"),
                 GroupName = "SampleCSR",

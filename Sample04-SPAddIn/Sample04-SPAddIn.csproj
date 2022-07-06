@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sample04</RootNamespace>
     <AssemblyName>Sample04</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetOfficeVersion>16.1</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -22,6 +22,7 @@
     <WorkflowPartId>{707cc500-2557-4628-8720-4537e95e89c7}</WorkflowPartId>
     <CspkgPartId>{1a3dbe81-8f57-4a86-ac96-3ff65a8c6cbe}</CspkgPartId>
     <SqlPackagePartId>{32a2ffee-45ed-496f-be3b-bb1a2c551abb}</SqlPackagePartId>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
