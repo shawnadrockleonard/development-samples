@@ -15,7 +15,6 @@ namespace Sample06
     {
         public SampleLibraryDefinition() : base()
         {
-            this.SiteResources = false; // used to provision list specific attributes not at the site level
             this.Lists.Add(GetSampleLibrary());
         }
 
@@ -41,7 +40,7 @@ namespace Sample06
             fields.Add(new SPFieldDefinitionModel(FieldType.Note)
             {
                 AddToDefaultView = true,
-                DisplayName = "My Notes",
+                Title = "My Notes",
                 Description = "Contains versioned notes",
                 FieldGuid = new Guid("d9c65062-cde4-49be-908b-be2982c70dcf"),
                 GroupName = "SampleVH",
@@ -52,7 +51,7 @@ namespace Sample06
             });
             fields.Add(new SPFieldDefinitionModel(FieldType.Choice)
             {
-                DisplayName = "My Choice",
+                Title = "My Choice",
                 Description = "Contains choice for version history",
                 FieldGuid = new Guid("a41e9f2a-dc8b-491c-8078-5a1f5082b1e4"),
                 GroupName = "SampleVH",
